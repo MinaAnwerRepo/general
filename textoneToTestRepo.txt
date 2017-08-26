@@ -14,6 +14,9 @@
                 string text = intent.GetStringExtra("MyData") ?? "Data not available";
                 Toast.MakeText(context, text, ToastLength.Short).Show();
             }
+			
+			
+			
             //read incomming sms
             if (intent.Action == IntentAction)
             {
