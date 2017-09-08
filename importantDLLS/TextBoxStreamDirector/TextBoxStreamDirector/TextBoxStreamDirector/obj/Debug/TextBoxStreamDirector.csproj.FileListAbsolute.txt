@@ -1,0 +1,4 @@
+E:\Important_C#_Solutions\importantDLLS\TextBoxStreamDirector\TextBoxStreamDirector\TextBoxStreamDirector\bin\Debug\TextBoxStreamDirector.dll
+E:\Important_C#_Solutions\importantDLLS\TextBoxStreamDirector\TextBoxStreamDirector\TextBoxStreamDirector\bin\Debug\TextBoxStreamDirector.pdb
+E:\Important_C#_Solutions\importantDLLS\TextBoxStreamDirector\TextBoxStreamDirector\TextBoxStreamDirector\obj\Debug\TextBoxStreamDirector.dll
+E:\Important_C#_Solutions\importantDLLS\TextBoxStreamDirector\TextBoxStreamDirector\TextBoxStreamDirector\obj\Debug\TextBoxStreamDirector.pdb
