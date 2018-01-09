@@ -12,3 +12,8 @@ ALTER AUTHORIZATION ON DATABASE:: [Stories] TO sa
 GO
 
 ---------------------------------------------------------------------------------
+
+ALTER SCHEMA TargetSchema 
+    TRANSFER SourceSchema.TableName;
+	
+---------------------------------------------------------------------------------
