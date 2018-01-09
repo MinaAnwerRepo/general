@@ -31,7 +31,15 @@ very important way to initialize new instant of object using Reflection
             DateTime y = (System.DateTime)obj;
      note :  it always uses default parameterless constructor to intialize the new instant of object 
 	         string as an example have no parameterless constructor to use 
-2-  System.Activator’s CreateInstanceFrom methods : 
+2-  System.Activator’s CreateInstanceFrom methods :
+3-  System.AppDomain’s methods 
+4-  System.Reflection.ConstructorInfo’s
+
+note : 
+      you know that all functions that takes type name and class name and Create new instance of this class 
+	  by default it calls parameterless constructor ...this is a problem with any value type as it have no parameterless 
+	  constructor ..
+	  solution is to use any overloads that takes 
     
 
 
