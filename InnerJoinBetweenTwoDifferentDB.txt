@@ -1,0 +1,6 @@
+select * 
+from dbo.NonFinancialDispute a
+inner join [MobileInterbankSwitch].dbo.Wallets b
+on a.WalletNumber =b.[WalletNo]
+where Status = 1 and SenderSchemeId = 6 and 
+CommercialRegistrationNumber = '123'
