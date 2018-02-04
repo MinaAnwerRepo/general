@@ -1,0 +1,6 @@
+use StudyMVC
+select  dbo.Department.Name , COUNT(*) as total
+from dbo.EmployeeData
+inner join dbo.Department
+on  dbo.EmployeeData.DepartmentId =dbo.Department.Id
+GrouP by department.name
