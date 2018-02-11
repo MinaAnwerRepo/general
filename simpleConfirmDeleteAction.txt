@@ -1,0 +1,51 @@
+
+@*<div class="delete-section">
+        <a id="original-button" style="cursor: pointer">Delete</a>
+        <a id="confirm-button" class="btn btn-warning" style="display: none" href="@Url.Action("Delete", "EmailConfiguration", new {id = Model.CurrentSchemeEmails[i].Id})">Confirm Delete</a>
+    </div>*@
+
+@*@section scripts{
+    <script type="text/javascript">
+        $(document)
+            .ready(function() {
+                $("#original-button")
+                    .click(function() {
+                        $('#original-button').hide();
+                        $('#confirm-button').show();
+                        // $(document).off("click", showOriginalLink);
+                    });
+            });
+
+        var showOriginalLink = function() {
+            $('#original-button').show();
+            $('#confirm-button').hide();
+
+        };
+
+        //var onKeyPress = function (e) {
+        //    //Cancel if escape key pressed
+        //    if (e.which == 27) {
+        //        showOriginalLink();
+        //    }
+        //};
+
+        //$(document).off("keypress", showOriginalLink);
+        // $(document).on("keypress", showOriginalLink);
+        // $(document).on("click", showOriginalLink);
+        //window.alert("flag  :" + flag);
+
+        //  $(document).on("click", showOriginalLink);
+        $(document)
+            .on('click',
+                function(event) {
+                    if (!$(event.target).closest('#original-button').length) {
+                        showOriginalLink();
+                    }
+                });
+
+        $(document).keypress(function() {
+            showOriginalLink();
+        });
+
+    </script>
+}*@
