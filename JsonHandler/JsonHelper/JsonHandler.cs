@@ -32,21 +32,22 @@ namespace JsonHelper
 
 
 
+
+
         public JsonHandler(string JsonString)
         {
             _jsonString = JsonString;
             _logger = new Logger();
+            FromStringToDic();
         }
 
         public JsonHandler(Dictionary<string, string> jsonDic)
         {
             _jsonDic = jsonDic;
+            FromDicToStr();
         }
 
-        public override string ToString()
-        {
-            return _jsonString;
-        }
+      
 
         public T Parse<T>()
         {
@@ -64,10 +65,25 @@ namespace JsonHelper
             _logger.AddToLog("Json Parsed successfully ");
         }
 
-        public T TryParse<T>()
+        public bool TryParse<T>(out T obj)
         {
-            return default(T);
+            _logger.AddToLog("try Parse Generic function called ");
+            try
+            {
+                obj = JsonConvert.DeserializeObject<T>(_jsonString);
+                return true; 
+            }
+            catch (Exception ex)
+            {
+                _logger.AddToLog("Can not parse json to this object ");
+                exception = ex;
+                obj = default(T);
+                return false;
+            }
+            _logger.AddToLog("Json Parsed successfully ");
+
         }
+
         public dynamic Parse()
         {
             _logger.AddToLog("Parse function called ");
@@ -87,6 +103,46 @@ namespace JsonHelper
 
 
 
+        public Dictionary<string,string> ToDictionary()
+        {
+            return _jsonDic;
+        }
+        public override string ToString()
+        {
+            return _jsonString;
+        }
+
+
+
+
+
+        private void FromStringToDic()
+        {
+            if(IsValid)
+            {
+                try
+                {
+                    _jsonDic = JsonConvert.DeserializeObject<Dictionary<string, string>>(_jsonString);
+                }
+                catch (Exception ex)
+                {
+                    exception = ex;
+                }
+            }
+        }
+
+        private void FromDicToStr()
+        {
+             try
+                {
+                    _jsonString = JsonConvert.SerializeObject(_jsonDic, Formatting.Indented);
+                }
+                catch (Exception ex)
+                {
+                    exception = ex; 
+                }
+          
+        }
 
 
 

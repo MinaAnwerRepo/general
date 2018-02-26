@@ -5,3 +5,4 @@ C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelper\bin\Debug\Syste
 C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelper\bin\Debug\Newtonsoft.Json.xml
 C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelper\obj\Debug\JsonHelper.dll
 C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelper\obj\Debug\JsonHelper.pdb
+C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelper\obj\Debug\JsonHelper.csprojResolveAssemblyReference.cache
