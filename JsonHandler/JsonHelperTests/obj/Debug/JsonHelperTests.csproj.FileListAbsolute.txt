@@ -6,10 +6,12 @@ C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelperTests\bin\Debug\
 C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelperTests\bin\Debug\JsonHelper.dll
 C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelperTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
 C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelperTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelperTests\bin\Debug\Newtonsoft.Json.dll
 C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelperTests\bin\Debug\System.Json.dll
 C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelperTests\bin\Debug\JsonHelper.pdb
 C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelperTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelperTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelperTests\bin\Debug\Newtonsoft.Json.xml
 C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelperTests\obj\Debug\JsonHelperTests.csprojResolveAssemblyReference.cache
 C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelperTests\obj\Debug\JsonHelperTests.dll
 C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelperTests\obj\Debug\JsonHelperTests.pdb

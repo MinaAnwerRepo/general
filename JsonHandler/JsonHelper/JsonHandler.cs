@@ -68,12 +68,12 @@ namespace JsonHelper
         {
             return default(T);
         }
-        public ExpandoObject Parse()
+        public dynamic Parse()
         {
             _logger.AddToLog("Parse function called ");
             try
             {
-                return JsonConvert.DeserializeObject<ExpandoObject>(_jsonString);
+                return JsonConvert.DeserializeObject<dynamic>(_jsonString);
             }
             catch (Exception ex)
             {
