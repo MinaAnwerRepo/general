@@ -3,3 +3,4 @@ C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelper\bin\Debug\JsonH
 C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelper\bin\Debug\System.Json.dll
 C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelper\obj\Debug\JsonHelper.dll
 C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelper\obj\Debug\JsonHelper.pdb
+C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelper\obj\Debug\JsonHelper.csprojResolveAssemblyReference.cache

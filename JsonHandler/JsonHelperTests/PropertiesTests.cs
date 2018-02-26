@@ -32,9 +32,13 @@ namespace JsonHelperTests
         {
             string jsonstring = @"{""name"": ""mina"",""age"" :12}";
 
+            string jsonstring2 = @"{'name':'minma','age':8}";
+
             JsonHandler jsonhandler = new JsonHandler(jsonstring);
             Assert.AreEqual(jsonhandler.ToString(), jsonstring);
         }
+
+      
 
     }
 }

@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,6 +48,41 @@ namespace JsonHelper
             return _jsonString;
         }
 
+        public T Parse<T>()
+        {
+            _logger.AddToLog("Parse Generic function called ");
+            try
+            {
+              return  JsonConvert.DeserializeObject<T>(_jsonString);
+            }
+            catch (Exception ex)
+            { 
+                _logger.AddToLog("Can not parse json to this object ");
+                exception = ex;
+                return default(T);
+            }
+            _logger.AddToLog("Json Parsed successfully ");
+        }
+
+        public T TryParse<T>()
+        {
+            return default(T);
+        }
+        public ExpandoObject Parse()
+        {
+            _logger.AddToLog("Parse function called ");
+            try
+            {
+                return JsonConvert.DeserializeObject<ExpandoObject>(_jsonString);
+            }
+            catch (Exception ex)
+            {
+                _logger.AddToLog("Can not parse json to this object ");
+                exception = ex;
+                return null;
+            }
+            _logger.AddToLog("Json Parsed successfully ");
+        }
 
 
 
