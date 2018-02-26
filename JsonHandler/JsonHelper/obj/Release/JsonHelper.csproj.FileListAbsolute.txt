@@ -1,0 +1,6 @@
+C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelper\bin\Release\JsonHelper.dll
+C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelper\bin\Release\JsonHelper.pdb
+C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelper\bin\Release\System.Json.dll
+C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelper\obj\Release\JsonHelper.csprojResolveAssemblyReference.cache
+C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelper\obj\Release\JsonHelper.dll
+C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelper\obj\Release\JsonHelper.pdb
