@@ -16,7 +16,6 @@ namespace JsonHelper
 
         public static Logger _logger { set; get; }
         public Exception exception { get; set; }
-
         public bool IsValid
         {
             get
@@ -31,16 +30,12 @@ namespace JsonHelper
         }
 
 
-
-
-
         public JsonHandler(string JsonString)
         {
             _jsonString = JsonString;
             _logger = new Logger();
             FromStringToDic();
         }
-
         public JsonHandler(Dictionary<string, string> jsonDic)
         {
             _jsonDic = jsonDic;
@@ -48,7 +43,6 @@ namespace JsonHelper
         }
 
       
-
         public T Parse<T>()
         {
             _logger.AddToLog("Parse Generic function called ");
@@ -64,7 +58,6 @@ namespace JsonHelper
             }
             _logger.AddToLog("Json Parsed successfully ");
         }
-
         public bool TryParse<T>(out T obj)
         {
             _logger.AddToLog("try Parse Generic function called ");
@@ -83,7 +76,6 @@ namespace JsonHelper
             _logger.AddToLog("Json Parsed successfully ");
 
         }
-
         public dynamic Parse()
         {
             _logger.AddToLog("Parse function called ");
@@ -99,7 +91,6 @@ namespace JsonHelper
             }
             _logger.AddToLog("Json Parsed successfully ");
         }
-
 
 
 
@@ -130,7 +121,6 @@ namespace JsonHelper
                 }
             }
         }
-
         private void FromDicToStr()
         {
              try

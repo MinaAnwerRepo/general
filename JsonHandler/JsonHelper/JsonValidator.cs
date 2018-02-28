@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Schema;
+using System;
 using System.Collections.Generic;
 using System.Json;
 using System.Linq;
@@ -7,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace JsonHelper
 {
-    public class JsonValidator
+    internal class JsonValidator
     {
         public void JsonHandler()
         {
@@ -35,8 +37,15 @@ namespace JsonHelper
             }
         }
 
+        public void ValidateSchema(JsonSchema JSchema, string JsonString)
+        {
+            JsonString = JsonString.Replace("\"", "'");
+            var ArrJobj = JArray.Parse(JsonString);
 
-
-
+            foreach (JObject jo in ArrJobj)
+            {
+                if (!jo.IsValid(JSchema)) throw new Exception("Schems Validation failed");
+            }
+        }
     }
 }

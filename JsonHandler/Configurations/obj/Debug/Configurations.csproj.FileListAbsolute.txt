@@ -1,0 +1,5 @@
+C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\Configurations\bin\Debug\Configurations.dll
+C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\Configurations\bin\Debug\Configurations.pdb
+C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\Configurations\obj\Debug\Configurations.csprojResolveAssemblyReference.cache
+C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\Configurations\obj\Debug\Configurations.dll
+C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\Configurations\obj\Debug\Configurations.pdb

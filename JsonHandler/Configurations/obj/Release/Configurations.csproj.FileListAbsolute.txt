@@ -1,0 +1,4 @@
+C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\Configurations\bin\Release\Configurations.dll
+C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\Configurations\bin\Release\Configurations.pdb
+C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\Configurations\obj\Release\Configurations.dll
+C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\Configurations\obj\Release\Configurations.pdb
