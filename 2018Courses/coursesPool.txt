@@ -1,3 +1,5 @@
+=> on the plan : 
+
 1- MVC .net Full hindi course .
 
 2- Angular course (Britsh).
@@ -5,3 +7,8 @@
 3- xamarin Course (xamarin Forms) .
 
 4- TDD    by (amir Gafaar) .
+
+
+
+=> Done : 
+
