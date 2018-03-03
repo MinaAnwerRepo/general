@@ -55,6 +55,7 @@
     <Compile Include="FunctionsTest.cs" />
     <Compile Include="PropertiesTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmokeTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -15,7 +15,7 @@ namespace JsonHelper
 
 
         public static Logger _logger;
-        public Exception exception;
+        public  Exception exception;
         public bool IsValid
         {
             get
@@ -49,7 +49,6 @@ namespace JsonHelper
 
 
 
-      
         public T Parse<T>()
         {
             _logger.AddToLog("Parse Generic function called ");
@@ -98,12 +97,11 @@ namespace JsonHelper
             }
             _logger.AddToLog("Json Parsed successfully ");
         }
-
-        public string stringify(object obj)
+        internal string stringify(object obj)
         {
              return JsonConvert.SerializeObject(obj);
         }
-    
+     
 
 
         public Dictionary<string,string> ToDictionary()
@@ -116,5 +114,15 @@ namespace JsonHelper
         }
 
 
+
+        public static string Stringify(object obj)
+        {
+            return JsonConvert.SerializeObject(obj);
+        }
+        public static bool ISValid(string _jsonstring)
+        {
+            JsonHandler helper = new JsonHandler(_jsonstring);
+           return helper.IsValid;
+        }
     }
 }
