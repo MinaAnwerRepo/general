@@ -13,7 +13,6 @@ namespace JsonHelper
         private string _jsonString { get; set; }
         private Dictionary<string, string> _jsonDic { get; set; }
 
-
         public static Logger _logger;
         public  Exception exception;
         public bool IsValid
@@ -92,6 +91,7 @@ namespace JsonHelper
             catch (Exception ex)
             {
                 _logger.AddToLog("Can not parse json to this object ");
+
                 exception = ex;
                 return null;
             }

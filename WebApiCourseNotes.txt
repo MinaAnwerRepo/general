@@ -1,0 +1,126 @@
+course name : WebApi 
+course name within the pool  : Web Services
+Course Lectures: 27 lectures 
+
+
+//------------------------ 1- What is a web Services ---------------------------
+
+//------------------------ 2- Exploring the history of the web Services --------
+
+
+//------------------------ 3- Transport Protocols HTTP vs Every thing else -----
+
+1- FTP  :  file Transfer Protocol 
+         designing for file Transfer between server and client 
+		 well - suited for long document 
+		 web service that uses this protocol is said to be asynchronous web service'
+		 
+		 ex : demo for client uploading file to provider 
+		 
+		 client send request to FTPserver
+         provider poll for request 
+         then provider will send response to server
+         client will poll for response
+		 
+    note : FTP is asynchronous as both client and server does not have notifications they depends on regular polling for new Messages . 
+	
+    FTP:is a great protocol to handle comp. to comp.conversation with large web services files.    	
+	
+	
+2- 	SMTP : simple mail Transfer Protocol 
+    POP : post office Protocol 
+   
+3- HTTP : hyper text Transfer Protocol 
+          sync communication 
+		  client send request and Wait 
+		  provider will response immediately 
+		  
+    list of http Methods : 
+	    Get,Head,Post,Put,Delete,Trace,Options,Connect,Patch
+		
+	most popular verbs : 
+    Get : get data 
+    Post : add data 
+    Delete : Delete Data 
+    PUT : update data (update every thing) . 
+
+	demo : http://services.explorecalifornia.org/pox/tours.php?packageid=5
+	
+	=> http: is the protocol 
+	service.explorecalifornia.org : is host
+	pox/tours.php : is resource root 
+	?packageid=5 : is Parameters 
+	
+    HTTP Request have many formats : 
+	1- normal syntax 
+	data will be like :
+ 	
+     Packageid = 5 	
+	
+	2- post syntax with XML 
+	   request will have extra two keys  in header:
+        Accept : application/xml 
+        Content-Type : application/xml		
+	data will be like :
+		<?xml version = "1.0" encoding="utf-8"?>
+		<parameters>
+		  <packageid>5</packageid>
+		</parameters>
+		
+	
+	3- post syntax with json 
+	   request will have extra two keys  in header:
+        Accept : application/json 
+        Content-Type : application/json		
+	data will be like :
+		{"Parameters":{
+		  "packageid":5
+		 }
+		}
+		
+		
+	=> HTTP Response will have may formats also : 
+	
+	complete referance will be at : http://httpstat.us
+	
+    	
+//------------------------ 4- Messages formats xml , json and  Every thing else -----	
+	
+just see this web service : http://maps.googleapis.com/maps/api/geocode/xml?address=new%20yourk&sensor=false
+and see some response formats in json and xml 
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
