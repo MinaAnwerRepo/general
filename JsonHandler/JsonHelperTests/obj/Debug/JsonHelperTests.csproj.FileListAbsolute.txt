@@ -15,3 +15,5 @@ C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelperTests\bin\Debug\
 C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelperTests\obj\Debug\JsonHelperTests.csprojResolveAssemblyReference.cache
 C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelperTests\obj\Debug\JsonHelperTests.dll
 C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelperTests\obj\Debug\JsonHelperTests.pdb
+C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelperTests\bin\Debug\Newtonsoft.Json.Schema.dll
+C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\JsonHelperTests\bin\Debug\Newtonsoft.Json.Schema.xml

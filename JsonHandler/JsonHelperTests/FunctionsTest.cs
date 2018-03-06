@@ -70,6 +70,17 @@ namespace JsonHelperTests
 
         }
 
+
+        [TestMethod]
+        public void Test_Validate()
+        {
+            string _jsonString = @"{""id"":2,""name"":""an ice scmdl"",""price"":22}" ;
+
+            string _jsonScheme = @"{""$schema"": ""http://json-schema.org/draft-07/schema#"", ""title"": ""any product name "",  ""description"": ""Aproduct form any company with name any name"", ""type"": ""object"", ""properties"": { ""id"": {  ""description"": ""the unique identifier for product "",  ""type"": ""integer"" },  ""name"": {  ""description"": ""name for product "",  ""type"": ""string""  }, ""price"": { ""type"": ""number"",""minimum"": 0, ""exclusiveMinimum"": true  }  },""required"": [  ""id"",""name"",  ""price"" ]}";
+            JsonHandler handler = new JsonHandler(_jsonString);
+            handler.Validate(_jsonScheme, true);
+        }
+
     }
 
 

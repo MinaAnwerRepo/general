@@ -123,7 +123,7 @@ notes:
 http://www.chrispeiris.com/seminars/monash_uni/web_pages/XMethods%20-%20Web%20Service%20Listings.htm
 
 
-//----------------------- 7- SOAP Simple object access Protocol -------------------------------------------------------
+//----------------------- 7- SOAP Simple object Access Protocol -------------------------------------------------------
 
 
 

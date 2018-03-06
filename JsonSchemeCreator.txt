@@ -1,0 +1,73 @@
+1- demo for json schema and json to validate : 
+
+
+=> schema : 
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "any product name ",
+  "description": "Aproduct form any company with name any name",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "the unique identifier for product ",
+      "type": "integer"
+    },
+    "name": {
+      "description": "name for product ",
+      "type": "string"
+    },
+    "price": {
+      "type": "number",
+      "minimum": 0,
+      "exclusiveMinimum": true
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "price"
+  ]
+}
+
+=> try this json : 
+      {
+        "id":2,
+        "name":"an ice scmdl",
+        "price":22
+      }
+  
+
+2- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
