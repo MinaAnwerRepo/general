@@ -22,13 +22,9 @@ namespace JsonHelperTests
             check = jsonhandler.IsValid;
 
             Assert.AreEqual(check, true);
-
-            Assert.AreEqual(jsonhandler.exception, null);
-
         }
 
       
-     
 
     }
 }

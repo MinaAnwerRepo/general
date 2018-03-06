@@ -8,20 +8,19 @@ namespace JsonHelper
 {
     public class Logger
     {
-        public Exception exception { get; set; }
+     
 
         public string LogInfo { get; set; }
 
         public Logger()
         {
-            exception = null;
             LogInfo = "";
         }
 
 
         public void Reset()
         {
-            exception = null;
+          
             LogInfo = "";
         }
 
@@ -30,7 +29,10 @@ namespace JsonHelper
             LogInfo += ",\n" + txt;
         }
 
-
+        public void addXML(string tag, string txt)
+        {
+            LogInfo += string.Format(@"<{0}>{1}</{0}>",tag,txt);
+        }
 
 
 

@@ -49,6 +49,7 @@
     <Compile Include="Enum\JsonFormats.cs" />
     <Compile Include="ExceptionWrapper.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="JsonConverter.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="JsonValidator.cs" />
     <Compile Include="JsonHandler.cs" />
