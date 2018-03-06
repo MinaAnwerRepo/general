@@ -5,12 +5,54 @@
     ViewBag.Title = "Home Page";
 }
 
-@Html.Trip()
+<div class="row">
+    <div class="col-md-4">
+        <a href="#">
+            <img class="img-fluid rounded mb-3 mb-md-0" src="http://placehold.it/700x300" alt="">
+        </a>
+    </div>
+    <div class="col-md-4">   
+        <h4>9:06 AM</h4>
+        <p> from : Lorem ipsu at vatque eveniet unde.</p>
+        <h4>12:06 AM</h4>
+        <p> To : Lorem ipsu at vatque eveniet unde.</p>
+       
+    </div>
+    <div class="col-md-4">
+        <div class="form-group row">
+            <div class="col-md-5">
+                <label for="ex1">Project Name : </label>             
+            </div>
+            <div class="col-md-7" >            
+                <input class="form-control" id="ex1" type="text">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-5">
+                <label for="ex2">Notes : </label>
+            </div>
+            <div class="col-md-7">
+                <input class="form-control" id="ex2" type="text">
+            </div>
+        </div>
+         <a class="btn btn-primary" href="#">Add</a>
+       
+   </div>
+    
+
+
+</div>
+
+
+
+
+
 
 
 @Html.Line()
-
-
+@Html.Line()
+@Html.Line()
+@Html.Line()
 @Html.Trip()
 
 
