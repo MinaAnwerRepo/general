@@ -90,7 +90,52 @@ just see this web service : http://maps.googleapis.com/maps/api/geocode/xml?addr
 and see some response formats in json and xml 
 
 	
-	
+//------------------------ 5-Web Services standered SAOP REST ODATA ----------------------------------------------------------
+
+1- SAOP toolkit : 
+
+Client --> Client Library  <.........................> server library  Provider 
+
+note : 
+      all Messages incoming and outgoing are XML Format 
+	  client and server Libraries are who Responsible for converting Objects to and from xml 
+	  
+	  more text needed to express your data 
+	  
+2- REST Web Services : 
+    Representational state Transfer   
+
+notes: 
+      Rest is architecture not specific web service formats 
+	  Based on simple HTTP request and Response 
+	  Lighter-weight than SOAP 
+	  
+3- OData Restful Standard 
+   based on REST architecture 
+   Fixed Messages syntax 
+   choose between XML and JSON
+   
+
+//------------------------ 6- Discovering useful web service ----------------------------------------------------------
+
+1- www.xmethods.com
+
+http://www.chrispeiris.com/seminars/monash_uni/web_pages/XMethods%20-%20Web%20Service%20Listings.htm
+
+
+//----------------------- 7- SOAP Simple object access Protocol -------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+ 	
 	
 	
 	
