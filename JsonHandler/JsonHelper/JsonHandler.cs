@@ -30,8 +30,6 @@ namespace JsonHelper
         }
 
 
-
-
         public JsonHandler(string JsonString)
         {
             _jsonString = JsonString;

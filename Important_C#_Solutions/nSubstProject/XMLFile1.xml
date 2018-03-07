@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Message><Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>RVSBa4NowNltViBHTc8HwUGbrg4=</DigestValue></Reference></SignedInfo><SignatureValue>LPbTeWNww4fN0PfCb097LK4EacYWonJHKlaINMXesNQ53wChNbAmcF9FYkexPwZ2nvTHp7hR0UydSfHnokl6jqhk5/yGTiw2FldB1E45kvKd2OyXyDdYuS1N13lRzBvitYwUaq0gAS8mlnJCykJIA1j2evAWclEgAsPNhs+/dEw=</SignatureValue></Signature><CMS.Inquire.Customer.Cards.Response><Data><Header><ClientId>c25e7f00-e154-463c-ad56-7243301f8357</ClientId><RequestId>00000000-0000-0000-0000-000000000000</RequestId><Version>1.00</Version><Channel>Mobile</Channel></Header><Body><ResponseCode></ResponseCode><ResponseDescription></ResponseDescription><Cards><Cards>
+                            <Card>
+                                <CardNumber>we5443</CardNumber>
+                                <ProductType>tr</ProductType>
+                                <CardProfile>4554g</CardProfile>
+                                <CardStatus>0</CardStatus>
+                            </Card>
+                            <Card>
+                                <CardNumber>we443</CardNumber>
+                                <ProductType>23</ProductType>
+                                <CardProfile>4334</CardProfile>
+                                <CardStatus>0</CardStatus>
+                            </Card></Cards></Cards></Body></Data></CMS.Inquire.Customer.Cards.Response></Message>
