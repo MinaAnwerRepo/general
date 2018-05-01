@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="en">
+
+<body>
+
+<script>
+     //var Person = new Object(); 
+	 
+	 var PersonClass = function (living , age , gender)
+				   {
+				      this.living = living ;
+					  this.age = age; 
+					  this.gender = gender ;
+					  this.getGender = function(){
+					  return this.gender ; }; 
+				   }
+
+     var cody = new PersonClass(true,33,'male');
+     var anotherCody = new PersonClass(false ,55 ,'female');
+	 console.log(cody);
+	 console.log(anotherCody);
+ 
+</script>
+</body>
+
+
+
+
+ 

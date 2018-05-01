@@ -1,0 +1,64 @@
+ 
+//----------------------------------------Expression Bodies in C# 6 and C# 7 -------------------------------------------
+
+  public class User : GenericUser
+    {
+        public int Id { get; set; }
+        public string name { get; set; }
+
+        //-------------------Expression Bodies functions ----------------------------------------------------
+
+        public string GetUserDetailsNormal()
+        {
+            return "UserId is " + this.Id + "and User Name is : " + this.name;
+        }
+
+        public override string GetUserInfo() => "any other data";
+
+        public string GetUserDetails() => "UserId is " + this.Id + "and User Name is : " + this.name;
+
+        public override string ToString() => base.ToString();
+
+        //-------------------Expression Bodies properties----------------------------------------------------------------
+
+        public string CountryNormal { get; set; }
+
+        public string CountryWithGet { get; }
+
+        public string CountryWithGetandData { get; } = "Egypt is my mother";
+
+        public string CountryNewStyle => "Egypt is my mother";
+
+        //-------------------Expression Bodies constructor and Destructor ----------------------------------------------------------------
+        //public User ()
+        //{
+        //    this.name = "hamada";
+        //}
+        public User() => this.name = "hamada";
+        ~User() => this.name = "hamada";
+        //-------------------Expression Setters and Getters ------------------------------------------------------------------------------        
+        public string PersonalData
+        {
+            get 
+            {
+              return "";
+            }
+            set
+            {
+                this.PersonalData = value;
+            }
+        }
+
+        public string PersonalDataNew
+        {
+            get => "he is single";
+            set => PersonalDataNew=value;
+        }
+    }
+	
+    public class GenericUser
+    {
+        public virtual string GetUserInfo() => "";
+    }
+	
+//---------------------------------------------------------------------------------------------------------------------------------------------------	

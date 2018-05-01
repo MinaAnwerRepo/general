@@ -1,0 +1,5 @@
+1- we need an android application that recive user name and password and check 
+if both of them are correct and alert message to user with result 
+
+2- application to register all data from user  and activate login page . 
+

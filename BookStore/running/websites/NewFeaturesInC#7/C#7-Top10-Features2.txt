@@ -1,0 +1,88 @@
+1-  Local functions or nested functions : 
+Demo : 
+
+   static void Main(string[] args)
+   {
+      void Add(int x , int y)
+      {
+         WriteLine("X:" + x + "Y :" + y);
+      }
+       Add(12, 32);
+   }
+    
+Using nested functions inside a function is called local function. To understand how local function works
+//---------------------------------------------------------------------------------------------------------------------
+
+2- 
+
+
+
+
+
+
+
+
+
+
+//---------------------------------------------------------------------------------------------------------------------
+9- Ref Returns and Locals :
+demo : 
+
+ class Program
+    {
+        static void Main(string[] args)
+        {
+            Master master = new Master();
+            int[] x = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
+            int xNum=master.GetFirstOddNum(ref x);
+            Console.WriteLine( xNum);
+            Console.ReadLine();
+        }
+    }
+
+    public class Master
+    {
+        public ref int GetFirstOddNum(ref int[] numbers)
+        {
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (numbers[i] % 2 == 1)
+                    return ref numbers[i];
+            }
+            throw new Exception("Odd Number not Found ...");
+        }
+    }
+	
+	
+you can now return ByRef any value with some limitations not only sending values by Ref 
+
+demo for Limitations : 
+
+public ref decimal GetProductPriceReference(int productId) {  
+    return ref ProductPriceList[productId];  
+	
+this throw Exception as  :
+
+CS8156 An expression cannot be used in this context because it may not be returned by reference
+
+
+//---------------------------------------------------------------------------------------------------------------------
+10-  throw Exception be more Easy : 
+            return y != 0 ? x % y : throw new DivideByZeroException();
+
+			this line was not allowed in c#6 now it allowed in c#7 
+//---------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+

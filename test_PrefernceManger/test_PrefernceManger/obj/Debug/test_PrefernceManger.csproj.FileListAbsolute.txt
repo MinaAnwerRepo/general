@@ -1,5 +1,0 @@
-C:\Users\m.lewes\Documents\Visual Studio 2017\Projects\test_PrefernceManger\test_PrefernceManger\bin\Debug\test_PrefernceManger.exe.config
-C:\Users\m.lewes\Documents\Visual Studio 2017\Projects\test_PrefernceManger\test_PrefernceManger\bin\Debug\test_PrefernceManger.exe
-C:\Users\m.lewes\Documents\Visual Studio 2017\Projects\test_PrefernceManger\test_PrefernceManger\bin\Debug\test_PrefernceManger.pdb
-C:\Users\m.lewes\Documents\Visual Studio 2017\Projects\test_PrefernceManger\test_PrefernceManger\obj\Debug\test_PrefernceManger.exe
-C:\Users\m.lewes\Documents\Visual Studio 2017\Projects\test_PrefernceManger\test_PrefernceManger\obj\Debug\test_PrefernceManger.pdb

@@ -1,9 +1,0 @@
-C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\Test_Log4netFramwork\bin\Debug\log4net.config
-C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\Test_Log4netFramwork\bin\Debug\Test_Log4netFramwork.exe.config
-C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\Test_Log4netFramwork\bin\Debug\Test_Log4netFramwork.exe
-C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\Test_Log4netFramwork\bin\Debug\Test_Log4netFramwork.pdb
-C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\Test_Log4netFramwork\bin\Debug\log4net.dll
-C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\Test_Log4netFramwork\bin\Debug\log4net.xml
-C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\Test_Log4netFramwork\obj\Debug\Test_Log4netFramwork.exe
-C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\Test_Log4netFramwork\obj\Debug\Test_Log4netFramwork.pdb
-C:\Users\m.lewes\Documents\GitHub\general\JsonHandler\Test_Log4netFramwork\obj\Debug\Test_Log4netFramwork.csprojResolveAssemblyReference.cache

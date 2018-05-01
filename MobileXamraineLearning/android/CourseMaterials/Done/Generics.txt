@@ -1,0 +1,81 @@
+1- Simple List Scenario : 
+
+List1 = {1,2,3,4} 
+List2 = {"string1","string2","string3"} 
+//---------------------------------------------------------------
+2- Class Used as a Collection of Objects
+
+    public class MyObjCollection
+    {
+        object[] items = new object[50]; // limit items
+        int numitems = 0;
+        public void Add(object item)
+        {
+            if (numitems + 1 < 50)
+            {
+                items[numitems] = item;
+                numitems++;
+            }
+        }
+
+       // This enables to retrieve an item by using mygencollection[2];
+        public object this[int n]
+        {
+           get { return items[n]; }
+        }
+    }
+	
+	
+++ to test our class : 
+	MyObjCollection objintcollection = new MyObjCollection(); 
+    objintcollection.Add(1); 
+    objintcollection.Add(2); 
+    objintcollection.Add(3); 
+    objintcollection.Add(4);
+
+	MyObjCollection objstringcollection = new MyObjCollection(); 
+    objstringcollection.Add("string1"); 
+    objstringcollection.Add("string2");
+    objstringcollection.Add("string3");
+	objstringcollection.Add(3); 
+	
+++ InvalidCastExceptions problems : 
+	
+	Int value1 = (int)objintcollection[0];
+	string str1 = (string)objstringcollection[0]; 
+	
+	string value1 = (string)objintcollection[0];
+
+//----------------------------------------------------------
+3- Generics Solution : 
+public class MyGenCollection<T> 
+{ 
+  T[] items = new T[50]; 
+  int numitems = 0; 
+  public void Add(T item) 
+  {
+    if (numitems + 1 < 50) 
+    {
+      items[numitems] = item; 
+      numitems++; 
+    }
+  }
+// This enables to retrieve an item by using mygencollection[2]; 
+  public T this[int n] 
+  { 
+    get { return items[n]; } 
+  }
+}
+	
+++ to test class :
+MyGenCollection<int> intcollection = new MyGenCollection<int>(); 
+intcollection.Add(1); 
+intcollection.Add(2); 
+intcollection.Add(3); 
+intcollection.Add(4);
+
+++ no need to cast or Type saftey issue .
+
+Console.WriteLine("Thank you Generics");	
+
+	
