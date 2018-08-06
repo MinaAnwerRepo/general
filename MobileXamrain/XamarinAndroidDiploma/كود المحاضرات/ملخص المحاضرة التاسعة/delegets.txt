@@ -1,0 +1,84 @@
+     class Program
+    {      
+        static bool CheckOdd(int num)
+        {
+            return num % 2 != 0;
+        }
+        static bool Checkeven(int num)
+        {
+            return num % 2 == 0; 
+        }
+        //static List<int> FilterOdd(List<int> list)
+        //{
+        //    List<int> newlist = new List<int>();
+        //    foreach (var item in list)
+        //    {
+        //        if (CheckOdd(item))
+        //            newlist.Add(item);
+        //    }
+        //    return newlist;
+        //}
+        //static List<int> FilterEven(List<int> list)
+        //{
+        //    List<int> newlist = new List<int>();
+        //    foreach (var item in list)
+        //    {
+        //        if (Checkeven(item))
+        //            newlist.Add(item);
+        //    }
+        //    return newlist;
+        //}
+        static List<int> Filter(List<int> list , delfilter del)
+        {
+            List<int> newlist = new List<int>();
+            foreach (var item in list)
+            {
+                if (del(item))
+                    newlist.Add(item);
+            }
+            return newlist;
+        }
+        static void Main(string[] args)
+        {
+            List<int> list = new List<int>() {1,2,3,4,5,6,7,8,9,10};
+            List<int> result;
+
+            delfilter del= new delfilter(CheckOdd);
+            //result =FilterOdd(list);
+            //result =FilterEven(list);
+            result = Filter(list, del);
+            Console.ReadLine(); 
+        }
+    }
+	
+	
+	
+	
+//-----------------------another simple Delegate demo -----------------------------------
+       delegate int Process(float data);
+
+         static void Main(string[] args)
+        {
+         
+            Process p = new Process( (float num)=> { return (int)num; } );  //ano. function and ano. delegate
+			
+			
+            Console.WriteLine(p.Invoke(2.3f));
+            Console.ReadLine();  
+	    }
+	
+	 
+        //public static int dowork(float num)
+        //{
+        //    return (int)num;
+        //}
+	
+	
+//-----------------------------------------------------------------------------------------------	
+	
+	
+	
+	
+	
+	
+	

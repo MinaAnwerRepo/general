@@ -1,0 +1,74 @@
+//----------------to add simple Pop-up menu 
+
++ go to Resources and add new folder called it Menu
++ inside it add new file called it popMenu.xml
+
+//-----------------------popMenu.xml-------------------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+  android:id="@+id/file_settings"
+  android:icon="@drawable/img_help"
+  android:title="Settings"
+  android:showAsAction="ifRoom">
+    <item
+    android:id="@+id/new_game1"
+    android:icon="@drawable/img_help"
+    android:title="New File Settings"/>
+    <item
+    android:id="@+id/help"
+    android:icon="@drawable/img_help"
+    android:title="Help"/>
+    <item
+    android:id="@+id/about_app"
+    android:icon="@drawable/img_help"
+    android:title="About app"/>
+  </item>
+</menu>
+
+//---------------------------------------
+using Android.App;
+using Android.Widget;
+using Android.OS;
+
+namespace PopUPMenu
+{
+    [Activity(Label = "PopUPMenu", MainLauncher = true, Icon = "@drawable/icon")]
+    public class MainActivity : Activity
+    {
+        Button btn;
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+
+            // Set our view from the "main" layout resource
+            SetContentView (Resource.Layout.Main);
+
+             btn = FindViewById<Button>(Resource.Id.popupButton);
+            btn.Click += Btn_Click;
+        }
+
+        private void Btn_Click(object sender, System.EventArgs e)
+        {
+            PopupMenu menu = new PopupMenu(this, btn);
+            menu.Inflate(Resource.Menu.popMenu);
+            menu.Show();
+        }
+    }
+}
+//-----------------------------main.axml-------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#d3d3d3"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <Button
+        android:id="@+id/popupButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Show popup menu"
+        android:background="@android:color/holo_green_dark"
+        android:textColor="@android:color/black" />
+</LinearLayout>
+//--------------------------------------------------------------------------

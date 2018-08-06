@@ -1,0 +1,333 @@
+//--------------------------------using Var -----------------------------
+            var str = "erer";
+            var i = 43;
+            var mina = new Donkey();
+//-----------------------casting -----------------------------------
+            int a = 122;
+            double b = a;
+
+            double a = 121;
+            int b = (int) a; 					
+//-------------------------Enum----------------------------------------
+  enum WeakDays
+    {
+        saturday ,
+        sunday ,
+        monday ,
+        tuesday ,
+        Wednesday, 
+        thrsday , 
+        friday
+    }
+    enum Gender
+    {
+        male , 
+        Female ,
+        Others
+    }
+//-------------------struct---------------------------------------------
+    public  struct Donkey
+    {
+        public int Id;
+        public double Data;
+        public string Name;
+        public DateTime BirthDay;
+
+        //public Donkey(int _id)   //struct Have NO Constructor 
+        //{
+        //    Id = _id;
+        //}
+
+        public void Add()
+        {
+            Store.AddDonkey(new Donkey());
+        }
+
+    }
+	
+     public class Store
+    {
+        public static Donkey  []   AllDonkeies = new Donkey[100];
+
+        public static void AddDonkey(Donkey _donkey)
+        {
+           int i=   AllDonkeies.Count();
+            AllDonkeies[i] = _donkey;
+        }
+    }
+	
+//----------------------------Nullable---------------------------------------------------------	
+		
+     int ? Data;
+     Data = null;	
+		
+    + Difference between Nullables in Stack and In Heap 
+	
+	+have alook to Null Type
+
+//--------------------------Exception Handling ------------------------------------------------------------------
+            int[] numbers = new int[2];
+             try
+             {
+                Console.Write("Enter Decimal Number  :");
+                string data = Console.ReadLine();
+                int num = int.Parse(data);
+                Console.WriteLine("you entered " + num);
+              }
+            catch (OverflowException ex)
+            {
+                Console.WriteLine("You Entered very big number !");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error occured: " + ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("\n\n Program will end Execuoin now  !!");
+            }
+            Console.ReadLine();
+
+-------------------------------Debugging-----------------------------------------------------------------	
+		Self study 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	

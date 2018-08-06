@@ -1,0 +1,81 @@
+namespace ConsoleApp3
+{
+    public class Square : Shape
+    {
+        public override double GetArea()
+        {
+            return x * x; 
+        }
+
+
+    }
+}
+
+
+
+namespace ConsoleApp3
+{
+   abstract public class Shape
+    {
+        public double x { get; set; }
+     
+        abstract public double GetArea();
+    }
+}
+
+
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double area;
+            Square squareone = new Square() { x = 5 };
+            area =  squareone.GetArea();
+
+            Circle circleone = new Circle() {  x = 2};
+            area = circleone.GetArea();
+
+            Shape shapeone = squareone;
+
+            area = shapeone.GetArea();
+
+        }
+    }
+}
+
+
+namespace ConsoleApp3
+{
+    public class Rectangular : Shape
+    {
+        public Double y { get; set; }
+
+        public override double GetArea()
+        {
+            return x * y; 
+        }
+    }
+}
+
+
+namespace ConsoleApp3
+{
+    public class Circle : Shape
+    {
+        public override double GetArea()
+        {
+            return 3.14 * x * x; 
+        }
+    }
+}
+
+
+
+
+
+
+
+
+

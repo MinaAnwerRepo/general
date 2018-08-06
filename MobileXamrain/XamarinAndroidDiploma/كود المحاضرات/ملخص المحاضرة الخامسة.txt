@@ -1,0 +1,66 @@
+ //------------------------------Try Parse--------------------------------------------        
+		 string UserInput =  Console.ReadLine();
+            int result;
+           bool flag =int.TryParse (UserInput,out result);
+
+            if(flag)
+            Console.WriteLine("good Job");
+            else
+                Console.WriteLine("error Input");
+
+//--------------------------------------------------------------------------------
+   string data = "mina anwer";
+            int num = 8909;
+            Console.WriteLine("your data is " + data +"and your number is "+num);
+
+            Console.WriteLine("your data is {0} and your number is {1}", data, num);
+
+//---------------------------------------------------------------------------------
++ add new class called it Cat
+
+ class Cat
+    {
+        private int Id;
+        public int lenght;
+        public string Color;
+
+        public Cat()
+        {
+            lenght = 0;
+            Color = "White";
+
+        }
+
+        public void Move()
+        {
+            Console.WriteLine("cat moving now !!1");
+        }
+    }
+	
+	+in main Function 
+	
+ class Program
+    {
+        static void Main(string[] args)
+        {
+            Cat Sherazey = new Cat();
+            Console.WriteLine(Sherazey.Color);
+            Console.WriteLine(Sherazey.lenght);
+
+            Sherazey.Color = "Black ";
+            Sherazey.lenght = 433434;
+
+            Cat seami = new Cat();
+            seami.Color = "green";
+            seami.lenght = -23;
+        }
+    }
+
+
+
+
+
+
+
+
+

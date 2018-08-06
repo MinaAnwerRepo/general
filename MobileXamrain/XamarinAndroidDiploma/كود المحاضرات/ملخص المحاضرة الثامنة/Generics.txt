@@ -1,0 +1,117 @@
+ //-----------------------------Generic Functions ------------------------
+  static void Main(string[] args)
+        {
+            int x = 0;
+            int y =2;           
+            double xx = 2;
+            double yy = 0;        
+            Show(x,y);
+            Show(xx, yy);
+            Show<int>(x, y);
+            Show<string>("as", "aa");
+            Show<char>('e', 'r');
+
+
+            Console.ReadLine();
+        }
+
+        public static void Show(double xx, double yy)
+        {
+            Console.WriteLine("X is : {0} y is : {1}", xx, yy);
+        }
+        public static void Show(int x, int y)
+        {
+            Console.WriteLine("X is : {0} y is : {1}", x, y);
+        }
+        public static void Show<T>(T x, T y )
+        {
+            Console.WriteLine("X is : {0} y is : {1}", x, y);
+        }
+
+//------------------------------GenericClasses-------------------------------
+
+1- normal Stack class 
+
+    public class collection
+    {
+        int[] data;
+        int count; 
+
+        public collection ()
+        {
+            data = new int[12];
+            count = 0;
+        }
+
+        public void Push (int num )
+        {
+            if(count<data.Length)
+            {
+                data[count] = num;
+                count++;
+            }          
+        }
+        public int Pull()
+        {
+            if (count > 0)
+            {
+                count--;
+                return data[count];
+            }
+            return 0;
+        }
+    }
+	
+	    static void Main(string[] args)
+        {
+            collection c = new collection();
+            c.Push(1);
+            c.Push(2);
+            c.Push(4);
+            Console.WriteLine(c.Pull());
+            Console.WriteLine(c.Pull());
+            Console.WriteLine(c.Pull());
+            Console.ReadLine();
+        }
+	
+2- class stack Generic : 
+   public class collection<T>
+    {
+        T[] data;
+        int count; 
+
+        public collection ()
+        {
+            data = new T[12];
+            count = 0;
+        }
+
+        public void Push (T num )
+        {
+            if(count<data.Length)
+            {
+                data[count] = num;
+                count++;
+            }          
+        }
+        public T Pull()
+        {
+            if (count > 0)
+              count--;                       
+            return data[count];
+        }
+    }
+
+	
+	static void Main(string[] args)
+        {
+            collection<int> c = new collection<int>();
+            c.Push(1);
+            c.Push(2);
+            c.Push(4);
+            Console.WriteLine(c.Pull());
+            Console.WriteLine(c.Pull());
+            Console.WriteLine(c.Pull());
+            Console.ReadLine();
+        }
+		

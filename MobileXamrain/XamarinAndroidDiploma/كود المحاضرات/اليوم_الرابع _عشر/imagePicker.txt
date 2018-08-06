@@ -1,0 +1,68 @@
+//------------------------------ImagePicker----------------------------------
+1- add View : 
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:x="http://schemas.android.com/apk/res/android"
+    x:orientation="vertical"
+    x:layout_width="match_parent"
+    x:layout_height="match_parent" >
+  <Button 
+    x:layout_width="wrap_content"
+    x:layout_height="wrap_content"
+    x:text="SelectImag"
+    x:id="@+id/btn1"/>
+  <ImageView
+    x:layout_width="wrap_content"
+    x:layout_height="wrap_content"
+    x:id="@+id/imageview"
+    x:src="@drawable/icon"
+    />
+</LinearLayout>
+//-----------------------------------------------------------------------------------
+
+2- add code Behind : 
+
+using Android.App;
+using Android.Widget;
+using Android.OS;
+using Android.Content;
+
+namespace test_no_need_6
+{
+    [Activity(Label = "test_no_need_6", MainLauncher = true, Icon = "@drawable/icon")]
+    public class MainActivity : Activity
+    {
+        Button btn1;
+        ImageView imagview;
+        public static readonly int PickImageId = 1000;
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+
+            // Set our view from the "main" layout resource
+             SetContentView (Resource.Layout.Main);
+             btn1 = FindViewById<Button>(Resource.Id.btn1);
+            btn1.Click += Btn1_Click;
+             imagview = FindViewById<ImageView>(Resource.Id.imageview);
+        }
+
+        private void Btn1_Click(object sender, System.EventArgs e)
+        {
+            Intent = new Intent();
+            Intent.SetType("image/*");
+            Intent.SetAction(Intent.ActionGetContent);
+            StartActivityForResult(Intent.CreateChooser(Intent, "Select Picture"), PickImageId);
+        }
+
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            if ((requestCode == PickImageId) && (resultCode == Result.Ok) && (data != null))
+            {
+                imagview.SetImageURI(data.Data);
+            }
+        }
+
+
+    }
+}
+

@@ -1,0 +1,43 @@
+Day 4 Solution : 
+
+- فانكشن ترجع حجم المكعب 
+         static double GetCubeVolum(float x , float y , float z)
+        {
+            return x * y * z;
+        }
+- فانكشن تاخد  اراي وترجع مربع كل عنصر فيها
+
+        static int []  SquareArrayElements( int []  arr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = arr[i] * arr[i];
+            }
+            return arr;
+        }
+- فانكشن ترجع مضروب الرقم
+
+         static int factorial(int num)
+        {
+            int fact = 1; 
+            for (int i = num; i > 0; i--)
+            {
+                fact = fact * i;
+            }
+            return fact;
+        }
+		
+- فانكشن بترجع الحروف من كابيتال لي سمول 
+
+   static string StringToLower(string str)
+        {
+            return str.ToLower();
+        }
+
+- فانكشن ترجع اكبر/اصغر  عناصر ال  ااراي 
+
+		   static int GetMaxElement(int[] arr)
+        {
+         //   return arr.Max();
+         //   return arr.Min();   
+        }

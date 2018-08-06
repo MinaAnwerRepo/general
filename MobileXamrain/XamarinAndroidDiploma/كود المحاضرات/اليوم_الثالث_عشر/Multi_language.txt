@@ -1,0 +1,64 @@
+1- to make your app suport many languages : 
+
++ stop using direct text values like this 
+
+ x:text="Button" 
+ 
++ any text will be seen by end user should be in values folder as key values like this : 
+
+  x:text="@string/ClickHere" 
+  
++you can create new folder in Resources to support another languages 
+its name should be standered according to this link :
+
+https://stackoverflow.com/questions/7973023/what-is-the-list-of-supported-languages-locales-on-android
+https://developer.xamarin.com/guides/android/advanced_topics/localization/
+
++add this command in application Tag in Manifest File :
+android:supportsRtl="true"
+
+for example: 
+values --> for english 
+values-ar -->for arabic 
+values-fr --> for french 
+//-----------------------------Change Language from mobile Settings to see this demo 
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:x="http://schemas.android.com/apk/res/android"
+    x:orientation="vertical"
+    x:layout_width="match_parent"
+    x:layout_height="match_parent"
+    x:minWidth="25px"
+    x:minHeight="25px">
+    <TextView
+        x:text="@string/TextWelcom"
+        x:layout_width="match_parent"
+        x:layout_height="37.0dp"
+        x:id="@+id/textView1"
+        x:layout_marginBottom="24.5dp" />
+    <Button
+        x:text="@string/ClickHere"
+        x:layout_width="wrap_content"
+        x:layout_height="wrap_content"
+        x:id="@+id/button1" />
+</LinearLayout>
+//----------------------------------------------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Hello">Hello World, Click Me!</string>
+    <string name="ApplicationName">Test_No_Use_3</string>
+  <string name="TextWelcom">Welcom In Our App </string>
+  <string name="ClickHere">ClickHere</string>
+</resources>
+//-----------------------------------------------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Hello">Hello World, Click Me!</string>
+    <string name="ApplicationName">Test_No_Use_3</string>
+  <string name="TextWelcom">اهلا بك في البرنامج </string>
+  <string name="ClickHere">اضغط هنا </string>
+</resources>
+//-------------------------------------------------------------------------
+
+
+

@@ -1,0 +1,153 @@
+------------------------------------------------layouts--------------------------------------------------
+A- Linear Layout : 
+
+1- demo : 
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/btn_one"
+        android:text="Button"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content" />
+    <Button
+        android:id="@+id/btn_two"
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+    <Button
+        android:id="@+id/btn_three"
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
+</LinearLayout>
+
+
+2- change horizontal to vertical   
+
+3-  units : 
+
+			 Fill Parent – Fills the parent Layout 3
+			 Wrap Content – Wraps with the maximum allowed (Parent’s) width or height
+			 Match Parent – Same as Fill Parent but added with different OS version
+			 Unit Values
+			 DP – Density independent Pixels, based on physical density of the screen.
+			 SP – Scale independent Pixels, scaled by user’s font size. Recommended to use with fonts.
+			 DPI – Same as DP
+			 PX – Pixels, corresponds to actual pixels on the screen.
+			 IN – Inches, based on the physical size of the screen.
+			 MM – Millimetres, based on the physical size of the screen.
+			 PT – Points, 1/72 of the inch based on the physical size of the screen.
+ 
+4- try to add more buttons >>>>>>> some of them will be cut from view as no scrole in width .
+
+5- in linear layout vertical try to change width of the any button to wrap parent..
+6- try to change android:button_text ="more text ......."  --> it will also try to wrap_content
+
+---------------------------------------------------------------------------------------------------------------------------
+
+B- Table Layout : 
+
+1- demo : 
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+<TableLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/tableLayout1">
+        <TableRow
+            android:id="@+id/tableRow1">
+            <Button
+                android:text="Button"
+                android:layout_column="1"
+                android:id="@+id/button2" />
+            <Button
+                android:text="Button"
+                android:layout_column="2"
+                android:id="@+id/button3" />
+            <Button
+                android:text="Button"
+                android:layout_column="3"
+                android:id="@+id/button9" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow2">
+            <Button
+                android:text="Button"
+                android:layout_column="0"
+                android:id="@+id/button4" />
+            <Button
+                android:text="Button"
+                android:layout_column="1"
+                android:id="@+id/button5" />
+            <Button
+                android:text="Button"
+                android:layout_column="2"
+                android:id="@+id/button6" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/tableRow3">
+            <Button
+                android:text="Button"
+                android:layout_column="0"
+                android:id="@+id/button7" />
+            <Button
+                android:text="Button"
+                android:layout_column="2"
+                android:id="@+id/button8" />
+            <Button
+                android:text="Button"
+                android:layout_column="3"
+                android:id="@+id/button10" />
+        </TableRow>
+    </TableLayout>
+</TableLayout>
+
+
+2- add   android:stretchColumns="1" 
+   and see different 
+   
+------------------------------------------------------------------------------------------------------
+C) FrameLayout : 
+
+note : 
+every element Begin to be draw from Top Left from layout 
+
+1- demo : 
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:src="@drawable/icon"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textColor="@android:color/holo_blue_dark"
+        android:text="hello,my Friends" />
+</FrameLayout>
+
+
+-----------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+

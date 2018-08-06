@@ -1,0 +1,124 @@
+using System;
+using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace EF
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            CompanyEntities context = new CompanyEntities();
+
+            #region LINQ in Action
+            //var query = 
+            //    from d in context.Departments
+            //    //where d.Name.StartsWith("H")
+            //    //where d.ID == int.Parse("1")
+            //    select d.Name;
+
+            //foreach (var item in query)
+            //{
+            //    Console.WriteLine(item);
+            //} 
+            #endregion
+
+            #region Update
+            //Department dept =
+            //    (from d in context.Departments
+            //    select d).FirstOrDefault();
+
+            ////context.Entry(dept).State = System.Data.Entity.EntityState.Detached;
+            //dept.Name = "Hello";   
+
+
+            //context.SaveChanges(); 
+            #endregion
+
+            
+
+            #region Insert
+            //Department dept = new Department() { Name = "New Dept37" };
+            //context.Departments.Add(dept);
+
+            //context.SaveChanges(); 
+            #endregion
+
+            #region Delete
+            //Department dept =
+            //    (from d in context.Departments
+            //     where d.ID == 46
+            //     select d).FirstOrDefault();
+
+            //context.Departments.Remove(dept);
+            //context.SaveChanges(); 
+            #endregion
+
+            #region Parent / Child
+            //var query =
+            //    from emp in context.Employees
+            //    select new { Emp = emp.Name, Dept = emp.Department.Name };
+
+            //foreach (var item in query)
+            //{
+            //    Console.WriteLine("Emp:{0}\tDept:{1}", item.Emp, item.Dept);
+            //}
+
+            //Department dept = new Department { Name = "Test" };
+
+            //Employee emp = new Employee
+            //{
+            //    Name = "ay 7aga",
+            //    BirthDate = DateTime.Now,
+            //    Department = dept
+            //};
+            //context.Employees.Add(emp);
+
+            //Department dept = new Department { Name = "Test" };
+
+            //dept.Employees.Add(new Employee { Name = "A", BirthDate = DateTime.Now });
+            //dept.Employees.Add(new Employee { Name = "B", BirthDate = DateTime.Now });
+            //dept.Employees.Add(new Employee { Name = "C", BirthDate = DateTime.Now });
+
+            //context.Departments.Add(dept);
+
+            //context.SaveChanges(); 
+            #endregion
+
+            #region Stored Procedure
+            //foreach (var item in context.procGetDepartments())
+            //{
+            //    Console.WriteLine(item.Name);
+            //} 
+            #endregion
+
+            CompanyEntities context2 = new CompanyEntities();
+
+            Employee emp1 = context.Employees.First();
+            Employee emp2 = context2.Employees.First();
+
+            emp1.Salary -= 1000;
+
+            emp2.Salary -= 500;
+
+            context.SaveChanges();
+
+            try
+            {
+                context2.SaveChanges();
+            }
+            catch(DbUpdateConcurrencyException ex)
+            {
+                var x = ex.Entries.First();
+                x.Reload();
+
+                emp2.Salary -= 500;
+                context2.SaveChanges();
+            }
+
+        }
+    }
+}

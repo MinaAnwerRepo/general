@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PopupApp.PopupView"
+     xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup">
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation DurationIn="800"
+                                   DurationOut="300"
+                                   EasingIn="CubicOut"
+                                   EasingOut="CubicOut"
+                                   HasBackgroundAnimation="True"
+                                   PositionIn="Center"
+                                   PositionOut="Center"
+                                   ScaleIn="2"
+                                   ScaleOut="0.5" />
+    </pages:PopupPage.Animation>
+
+    <StackLayout Margin="12"
+                 Padding="24"
+                 BackgroundColor="White"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center">
+        <StackLayout>
+            <Label Text="Login" />
+            <Entry 
+                   Text="username@email.com" />
+        </StackLayout>
+        <StackLayout>
+            <Label Text="Password" />
+            <Entry
+                   IsPassword="True"
+                   Text="password123" />
+        </StackLayout>
+        <Button BackgroundColor="DodgerBlue"
+                
+                Text="Login"
+                TextColor="White" 
+                Clicked="Button_Clicked"/>
+    </StackLayout>
+
+</pages:PopupPage>

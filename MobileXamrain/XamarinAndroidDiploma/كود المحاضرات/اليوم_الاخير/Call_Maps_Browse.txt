@@ -1,0 +1,82 @@
+//----------------------to make your app make aphone call from client mobile you need to -----------
+
+1- take permission to make call  ----> CALL_PHONE
+
+2- make button in view file .
+
+
+3- you will need to start activity  to call class intent with suitable uri like demo : 
+
+
+//-------------------------------------------main.axml------------
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+  <Button
+    android:text="01221926646"
+    android:id="@+id/btn_call"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    />
+  
+</LinearLayout>
+//--------------------------------------mainactivity.cs------------
+
+using Android.Content;
+
+    [Activity(Label = "makeaphonecall", MainLauncher = true, Icon = "@drawable/icon")]
+    public class MainActivity : Activity
+    {
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+
+            SetContentView (Resource.Layout.Main);
+            Button btn = FindViewById<Button>(Resource.Id.btn_call);
+            btn.Click += delegate
+             {
+                 var uri = Android.Net.Uri.Parse("tel:01221926646");
+                 var intent = new Intent(Intent.ActionCall, uri);
+                 StartActivity(intent);
+             };
+        }
+    }
+	
+//-----------------------------to put location on google maps----------------------------
+
+
+
+            Button btn = FindViewById<Button>(Resource.Id.btn_call);
+            btn.Click += delegate
+             {
+                 var geoUri = Android.Net.Uri.Parse("geo:30.09618,31.25091");
+                 var mapIntent = new Intent(Intent.ActionView, geoUri);
+                 StartActivity(mapIntent);
+             };
+			 
+//------------------------to open Client Browser and redirect to web page------------------			 
+
+            Button btn = FindViewById<Button>(Resource.Id.btn_call);
+            btn.Click += delegate
+             {
+                 var uri = Android.Net.Uri.Parse("http://www.xamarin.com");
+                 var intent = new Intent(Intent.ActionView, uri);
+                 StartActivity(intent);
+             };
+			 
+			 
+//--------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+

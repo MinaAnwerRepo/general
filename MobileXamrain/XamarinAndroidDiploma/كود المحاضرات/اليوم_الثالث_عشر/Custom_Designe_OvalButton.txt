@@ -1,0 +1,33 @@
+//--------------------------Custom Design----------------------------------
+//-------this is main.axml------------------------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:x="http://schemas.android.com/apk/res/android"
+    x:orientation="vertical"
+    x:layout_width="match_parent"
+    x:layout_height="match_parent">
+    <Button
+        x:layout_width="wrap_content"
+        x:layout_height="wrap_content"
+        x:background="@drawable/round_button"
+        x:gravity="center_vertical|center_horizontal"
+        x:text="hello"
+        x:textColor="#fff" />
+</LinearLayout>
+
+//--------------------this is Selector--------------------------------------------
+//---add thid selector as round_button.xml in Drawable Folder---------------------
+
+<?xml version="1.0" encoding="utf-8" ?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:state_pressed="false">
+    <shape android:shape="oval">
+      <solid android:color="#fa09ad"/>
+    </shape>
+  </item>
+  <item android:state_pressed="true">
+    <shape android:shape="oval">
+      <solid android:color="#c20586"/>
+    </shape>
+  </item>
+</selector>
+//------------------------------------------------------------------------------

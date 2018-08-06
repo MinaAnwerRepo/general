@@ -1,0 +1,16 @@
+after 7 months with coding with Xamarin here is some points every one should know about xamarin 
+
+1- what is Xamarin ?
+ cross platfom framwork to develop mobile applications with c# and dot net framwork . 
+
+2- How Does it work ? 
+ How Does Xamarin Work?
+
+Xamarin gives the flexibility to write core logic using C# and gives the flexibility to design native user interface specifically for each platform. The amount of code re-use will depend on how much code is kept in core and how much moves into user-interface.
+
+Xamarin
+C# source compiled into a native app in very different for each platform
+
+iOS – C# source code is compiled using Xamarin.iOS. It uses a special subset of the mono framework. This subset version of the mono framework has additional libraries. The framework itself allows access to iOS platform specific features. The Xamarin.iOS compiler compiles source code into an intermediate language that is known as ECMA CIL (common intermediate language). After compilation of Xamarin.iOS application code into CIL there is needs to compile it again into native machine code that can run on an iOS device. The process of converting CIL into native code is carried out by the SDK tool “Mtouch.” “Mtouch” returns an application bundle that can be deployed to either the iOS simulator or an actual iOS device, such as an iPhone or iPad. The iOS kernel will not allow programs to generate code at runtime. This restriction is placed by Apple iOS kernel. This restriction has great implications for software systems that run inside a virtual machine using just-in-time compilation. This type of compilation coverts code into intermediate language and at runtime this is converted into machine code. The converted machine code becomes compatible with devices on which it is running. To work around this restriction the “Mtouch” tool compiles the CIL ahead of time.
+Android – Code of C# is compiled to intermediate language with a package of MonoVM + JIT. If there are any unused classes of framework then in linking it is stripped out. The application runs interact with the java native types through JNI (Java Native Invoke)
+Windows – Code of C# is compiled to intermediate language which will be executed by the built in runtime. This compiled code does not require Xamarin tools.

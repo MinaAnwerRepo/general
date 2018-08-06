@@ -1,0 +1,447 @@
+- list view is the most important tool in xamarin 
+- lets understand it step by step 
+------------------------------------------------------------------------------------------------
+1- very simple ListView  :
+
+
++ go to layout folder add new layout ListViewTemplate1 
++ ListViewTemplate1 :
+
+<?xml version="1.0" encoding="utf-8" ?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/datatext"
+    android:textSize="44sp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+	
++ add this lines in main activity : 
+
+  [Activity(Label = "Test_Designe", MainLauncher = true, Icon = "@drawable/icon")]
+    public class MainActivity : Activity
+    {
+        protected override void OnCreate(Bundle bundle)
+        {
+
+            base.OnCreate(bundle);
+            SetContentView(Resource.Layout.Main);
+            var listview = FindViewById<ListView>(Resource.Id.listView1);
+            var data = new string[] { "monday", "saturday", "wedensday", "friday",
+                                      "sunday", "tuesday", "Moondat", "can not", "montasd", "dsa ist !",
+                                      "dsds  ", "asddd"  };
+            listview.Adapter = new ArrayAdapter(this, Resource.Layout.ListViewTemplate, data);
+
+			}
+    }
+	
++ just drag  listview in main layout
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <ListView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/listView1" />
+</LinearLayout>
+
+
+----------------------------------------------------------------------------------------------
+
+2- objects  ListView  :
+
++ add class Person 
+
+    class Person
+    {
+      public  string firstname { get; set; }
+      public  string lastname  { get; set; }
+      public string  EmailId   { get; set; }  
+	  
+	     public static List<Person> CreateSampleData (int Range)
+        {
+            var Persons = new List<Person>();
+            for (int i=0; i<= Range; i++)
+            {
+                var Person = new Person();
+                Person.firstname = "firstname " + i;
+                Person.lastname = "last name" + i;
+                Person.EmailId = "Email " + i;
+                Persons.Add(Person);
+            }
+            return Persons; 
+        }
+
+	  
+    }
+
++  replace data variable with 
+
+  var data =  Person.CreateSampleData(10);
+  
++  the problem is that it need some kind of Adapter like Array adapter to adapt 
+   class objec to view  : 
+   
+   
++ add class person : 
+ class Person
+    {
+      public  string firstname { get; set; }
+      public  string lastname  { get; set; }
+      public string  EmailId   { get; set; }
+        
+
+        public static List<Person> CreateSampleData (int Range)
+        {
+            var Persons = new List<Person>();
+            for (int i=0; i<= Range; i++)
+            {
+                var Person = new Person();
+                Person.firstname = "firstname " + i;
+                Person.lastname = "last name" + i;
+                Person.EmailId = "Email " + i;
+                Persons.Add(Person);
+            }
+            return Persons; 
+        }
+
+    }
+	 
+	 
++ Add this class Adapter : 
+        using System;
+		using System.Collections.Generic;
+		using System.Linq;
+		using System.Text;
+
+		using Android.App;
+		using Android.Content;
+		using Android.OS;
+		using Android.Runtime;
+		using Android.Views;
+		using Android.Widget;
+
+		namespace Test_Designe
+		{
+			class PersonAdapter : BaseAdapter<Person>
+			{
+				List<Person> items;
+				Activity context;
+
+				public PersonAdapter (Activity _context , List<Person> _items)
+				{
+					items = _items; context = _context; 
+				}
+
+				public override Person this[int position]
+				{
+					get { return items[position]; }
+				}
+
+
+				public override int Count
+				{
+					get { return items.Count(); }
+				}
+
+				public override long GetItemId(int position)
+				{
+					return position;
+				}
+
+				public override View GetView(int position, View convertView, ViewGroup parent)
+				{
+					var item = items[position];
+
+					View view = convertView;
+					if(view == null)
+					{
+						view = context.LayoutInflater.Inflate(Resource.Layout.ListViewTemplate, null);
+					}
+					view.FindViewById<TextView>(Resource.Id.datatext).Text = 
+						item.firstname + "  "+item.lastname;
+					return view;
+
+				}
+			}
+		}
+
+ + update mainActivity.css 
+ 
+         protected override void OnCreate(Bundle bundle)
+        {
+
+            base.OnCreate(bundle);
+            SetContentView(Resource.Layout.Main);
+
+            var data =  Person.CreateSampleData(10);
+            var listview = FindViewById<ListView>(Resource.Id.listView1);
+           // listview.Adapter = new ArrayAdapter(this, Resource.Layout.ListViewTemplate, data);
+            listview.Adapter = new PersonAdapter(this, data);
+
+
+        }
+-----------------------------------------------------------------------------------------------
+3- list view more Features  : 
+
++ add more items in listviewTemplet 
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+  <TextView
+      android:id="@+id/textview1"
+      android:textSize="24sp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" />
+  <TextView
+      android:id="@+id/textview2"
+      android:textSize="12sp"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" />
+</LinearLayout>
+
+
++ update this function in your Adapter : 
+
+ public override View GetView(int position, View convertView, ViewGroup parent)
+        {
+            var item = items[position];
+
+            View view = convertView;
+            if(view == null)
+            {
+                view = context.LayoutInflater.Inflate(Resource.Layout.ListViewTemplate, null);
+            }
+            view.FindViewById<TextView>(Resource.Id.textview1).Text = 
+                item.firstname + "  "+item.lastname;
+            view.FindViewById<TextView>(Resource.Id.textview2).Text =
+                "this is Email" + item.EmailId;
+            return view;
+
+        }
+------------------------------------------------------------------------------------------------\
+3- Selective ListView : 
+
+-   with array_adaptive : 
+
+         protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+            SetContentView(Resource.Layout.Main);
+            //var data =  Person.CreateSampleData(10);
+            //var listview = FindViewById<ListView>(Resource.Id.listView1);
+            //listview.Adapter = new PersonAdapter(this, data);
+            string [] data = new string[] {"sunday","monday","tuesday","wednsday","ayeday","minas","mimnas"};
+            ListView lstview = FindViewById<ListView>(Resource.Id.listView1);
+            lstview.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SelectDialogSingleChoice, data);
+            lstview.ChoiceMode = ChoiceMode.Multiple;
+                
+
+
+        }
+		
+-   try different styles in List view : 
+
+--------------------------------------------------------------------------------------------
+4- Get selected Items from ListView : 
+
+-  add this code in Activity : 
+
+ [Activity(Label = "App3", MainLauncher = true, Icon = "@drawable/icon")]
+    public class MainActivity : Activity
+    {
+        ListView lstview;
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+
+            // Set our view from the "main" layout resource
+            SetContentView (Resource.Layout.Main);
+            lstview = FindViewById<ListView>(Resource.Id.lstview);
+            string[] data = new string[] { "sunday", "monday", "tuesday", "wednsday", "ayeday", "minas", "mimnas" };
+
+            Button doneButton = FindViewById<Button>(Resource.Id.Button1);
+            doneButton.Click += DoneButton_Click;
+
+           
+
+            lstview.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItemMultipleChoice, data);
+            lstview.ChoiceMode = ChoiceMode.Multiple;
+
+        }
+
+        private void DoneButton_Click(object sender, System.EventArgs e)
+        {
+            var sparseArray =lstview.CheckedItemPositions;
+            string dataSelected = "";
+            for (int i = 0; i < sparseArray.Size(); i++)
+            {
+                dataSelected += sparseArray.KeyAt(i) + "  :  " + sparseArray.ValueAt(i)+"\n";
+
+            }
+              ShowAlert("List View Element :", dataSelected);
+
+        }
+
+        private void ShowAlert(string title, string dataSelected)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog alertdialog = builder.Create();
+            alertdialog.SetTitle(title);
+            alertdialog.SetIcon(Android.Resource.Drawable.IcDialogAlert);
+            alertdialog.SetMessage(dataSelected);
+            alertdialog.Show();
+
+        }
+    }
+
+
+
++ this is Full Designe :
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lstview" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@android:style/ButtonBar">
+        <Button
+            android:text="Done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Button1" />
+    </LinearLayout>
+</LinearLayout>
+
+
+
+----------------------------------------------------------------------------------------------------------------
+5- listView inside scroll View Container 
++ this code will generate error so we implement ==>   ControlHelper.FixListViewSize(lstview);
+
+- add this Designe : 
+
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:x="http://schemas.android.com/apk/res/android"
+    x:minWidth="25px"
+    x:minHeight="25px"
+    x:layout_width="match_parent"
+    x:layout_height="match_parent"
+    x:id="@+id/scrollview1">
+    <LinearLayout
+        x:orientation="vertical"
+        x:minWidth="25px"
+        x:minHeight="25px"
+        x:layout_width="match_parent"
+        x:layout_height="match_parent"
+        x:id="@+id/linearlayout1">
+        <TextView
+            x:text="@string/sampletext"
+            x:layout_width="match_parent"
+            x:layout_height="wrap_content"
+            x:id="@+id/textview1" />
+        <ListView
+            x:minWidth="25px"
+            x:minHeight="23px"
+            x:layout_width="match_parent"
+            x:layout_height="wrap_content"
+            x:id="@+id/listview1" />
+    </LinearLayout>
+</ScrollView>
+
+- add this class in the solution : 
+
+    public static class ControlHelper
+    {
+       public static void FixListViewSize(ListView listView)
+        {
+            IListAdapter adapter = listView.Adapter;
+            
+            if(adapter == null)
+            {
+                return;
+            }
+
+            var totalHeight = 0;
+            for (int i = 0; i < adapter.Count; i++)
+            {
+                View listItem = adapter.GetView(i, null, listView);
+                listItem.Measure(0, 0);
+                totalHeight += listItem.MeasuredHeight;
+
+            }
+
+            ViewGroup.LayoutParams parameters = listView.LayoutParameters;
+            parameters.Height = totalHeight + (listView.DividerHeight * (adapter.Count - 1));
+
+            listView.LayoutParameters = parameters;
+        }
+    }
+	
+- add this string in values string  :
+
+	 <string name="sampletext">
+		hi my name is hamadahi my name is hamadahi my name is hamadahi my name is hamada
+		hi my name is hamadahi my name is hamadahi my name is hamadahi my name is hamada
+		hi my name is hamadahi my name is hamadahi my name is hamada
+		hi my name is hamadahi my name is hamadahi my name is hamada
+		hi my name is hi my name is hamadahi my name is hamada
+	  </string>	
+	
+	
+-  add this code in main activity 
+
+    [Activity(Label = "App3", MainLauncher = true, Icon = "@drawable/icon")]
+    public class MainActivity : Activity
+    {
+        
+        ListView lstview;
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+            SetContentView (Resource.Layout.Main);
+          
+            lstview = FindViewById<ListView>(Resource.Id.listview1);
+            string[] Days = new string[] { "sunday", "monday", "tuesday", "wednsday", "ayeday", "minas", "mimnas",
+            "sunday", "monday", "tuesday", "wednsday", "ayeday", "minas", "mimnas",
+            "sunday", "monday", "tuesday", "wednsday", "ayeday", "minas", "mimnas",
+            "sunday", "monday", "tuesday", "wednsday", "ayeday", "minas", "mimnas",
+            "sunday", "monday", "tuesday", "wednsday", "ayeday", "minas", "mimnas"};
+      
+            lstview.Adapter = new ArrayAdapter(this, Android.Resource.Layout.SimpleListItem1, Days);
+
+            ControlHelper.FixListViewSize(lstview);
+        }  
+    }
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,495 @@
+add this files in layout 
+
+- main.axml
+- register.axml
+- home.axml
+
+
+add also this activities : 
+
+- MainActivity
+- homeActivity
+- RegisterActivity
+
+//-------------------------main.axml--------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="92.5dp"
+        android:id="@+id/linearLayout8" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout4">
+        <EditText
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="49.3dp"
+            android:id="@+id/login_username"
+            android:layout_marginRight="20px"
+            android:layout_marginTop="0.0dp"
+            android:layout_marginBottom="1.3dp"
+            android:layout_marginLeft="20px"
+            android:textColor="@android:color/darker_gray"
+            android:tag="Enter your Email address"
+            android:gravity="left"
+            android:hint="UserName"
+            android:textColorHint="@android:color/darker_gray" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout5">
+        <EditText
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="43.7dp"
+            android:id="@+id/login_password"
+            android:layout_marginTop="1.0dp"
+            android:layout_marginRight="20px"
+            android:layout_marginLeft="20px"
+            android:layout_marginBottom="0.3dp"
+            android:textColor="@android:color/darker_gray"
+            android:password="true"
+            android:gravity="left"
+            android:hint="Password"
+            android:textColorHint="@android:color/darker_gray" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="64.3dp"
+        android:id="@+id/linearLayout6"
+        android:layout_marginBottom="0.0dp">
+        <Button
+            android:text="Login"
+            android:layout_width="match_parent"
+            android:layout_height="45.7dp"
+            android:id="@+id/btn_login"
+            android:layout_marginBottom="13.0dp"
+            android:layout_marginLeft="20px"
+            android:layout_marginRight="20px"
+            android:layout_marginTop="20px"
+            android:background="@drawable/bluebutton"
+            android:textColor="@android:color/background_light" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="59.3dp"
+        android:id="@+id/linearLayout2"
+        android:layout_marginBottom="10.7dp">
+        <Button
+            android:text="Or Register"
+            android:layout_width="132.5dp"
+            android:layout_height="46.7dp"
+            android:id="@+id/btn_register"
+            android:layout_weight="1"
+            android:layout_marginLeft="20px"
+            android:layout_marginRight="20px"
+            android:layout_marginTop="20px"
+            android:layout_marginBottom="20px"
+            android:background="@drawable/blueskybutton"
+            android:textColor="@android:color/background_light" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="51.0dp"
+        android:id="@+id/linearLayout7"
+        android:gravity="center"
+        android:layout_marginBottom="9.0dp">
+        <TextView
+            android:text="ForgetPassword"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="151.3dp"
+            android:layout_height="31.0dp"
+            android:id="@+id/textView2"
+            android:textColor="@android:color/holo_green_dark"
+            android:gravity="center"
+            android:layout_marginRight="0.0dp" />
+        <ImageButton
+            android:src="@drawable/helplock"
+            android:layout_width="49.0dp"
+            android:layout_height="34.0dp"
+            android:id="@+id/imageButton1"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="6.0dp"
+            android:layout_marginBottom="3.0dp"
+            android:background="@android:color/background_light" />
+    </LinearLayout>
+</LinearLayout>
+
+
+//-------------------------------Register.axml-------------------
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="83.5dp"
+        android:id="@+id/linearLayout8" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout4">
+        <EditText
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="49.3dp"
+            android:id="@+id/register_email"
+            android:layout_marginRight="20px"
+            android:layout_marginTop="0.0dp"
+            android:layout_marginBottom="1.3dp"
+            android:layout_marginLeft="20px"
+            android:textColor="@android:color/darker_gray"
+            android:tag="Enter your Email address"
+            android:gravity="left"
+            android:hint="Email"
+            android:textColorHint="@android:color/darker_gray" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout4">
+        <EditText
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="49.3dp"
+            android:id="@+id/register_address"
+            android:layout_marginRight="20px"
+            android:layout_marginTop="0.0dp"
+            android:layout_marginBottom="1.3dp"
+            android:layout_marginLeft="20px"
+            android:textColor="@android:color/darker_gray"
+            android:tag="Enter your Email address"
+            android:gravity="left"
+            android:hint="Address"
+            android:textColorHint="@android:color/darker_gray" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout4">
+        <EditText
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="49.3dp"
+            android:id="@+id/register_username"
+            android:layout_marginRight="20px"
+            android:layout_marginTop="0.0dp"
+            android:layout_marginBottom="1.3dp"
+            android:layout_marginLeft="20px"
+            android:textColor="@android:color/darker_gray"
+            android:tag="Enter your Email address"
+            android:gravity="left"
+            android:hint="UserName"
+            android:textColorHint="@android:color/darker_gray" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout5">
+        <EditText
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="43.7dp"
+            android:id="@+id/register_password"
+            android:layout_marginTop="1.0dp"
+            android:layout_marginRight="20px"
+            android:layout_marginLeft="20px"
+            android:layout_marginBottom="0.3dp"
+            android:textColor="@android:color/darker_gray"
+            android:password="true"
+            android:gravity="left"
+            android:hint="Password"
+            android:textColorHint="@android:color/darker_gray" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout4">
+        <EditText
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="49.3dp"
+            android:id="@+id/register_confirmPassword"
+            android:layout_marginRight="20px"
+            android:layout_marginTop="0.0dp"
+            android:layout_marginBottom="1.3dp"
+            android:layout_marginLeft="20px"
+            android:textColor="@android:color/darker_gray"
+            android:tag="Enter your Email address"
+            android:gravity="left"
+            android:hint="ReConfirmPassword"
+            android:textColorHint="@android:color/darker_gray" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="59.3dp"
+        android:id="@+id/linearLayout2"
+        android:layout_marginBottom="10.7dp">
+        <Button
+            android:text="Register"
+            android:layout_width="132.5dp"
+            android:layout_height="46.7dp"
+            android:id="@+id/btn_register_ok"
+            android:layout_weight="1"
+            android:layout_marginLeft="20px"
+            android:layout_marginRight="20px"
+            android:layout_marginTop="20px"
+            android:layout_marginBottom="20px"
+            android:background="@drawable/blueskybutton"
+            android:textColor="@android:color/background_light" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="51.0dp"
+        android:id="@+id/linearLayout7"
+        android:gravity="center"
+        android:layout_marginBottom="9.0dp">
+        <TextView
+            android:text="ForgetPassword"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="151.3dp"
+            android:layout_height="31.0dp"
+            android:id="@+id/textView2"
+            android:textColor="@android:color/holo_green_dark"
+            android:gravity="center"
+            android:layout_marginRight="0.0dp" />
+        <ImageButton
+            android:src="@drawable/helplock"
+            android:layout_width="49.0dp"
+            android:layout_height="34.0dp"
+            android:id="@+id/imageButton1"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="6.0dp"
+            android:layout_marginBottom="3.0dp"
+            android:background="@android:color/background_light" />
+    </LinearLayout>
+</LinearLayout>
+
+//---------------------home.axml-------------------------------------
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <EditText
+        android:inputType="textMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText1"
+        android:textColor="@android:color/holo_green_light"
+        android:text="welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            welcom   welcom            " />
+</LinearLayout>
+
+
+//---------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+//----------------------------------mainactivity.cs-------------------------------------
+using Android.App;
+using Android.Widget;
+using Android.OS;
+
+namespace Day18
+{
+    [Activity(Label = "Day18", MainLauncher = true, Icon = "@drawable/icon")]
+    public class MainActivity : Activity
+    {
+        myservice.Service1 client = new myservice.Service1();
+
+        Button btn_login ;
+        Button btn_register ;
+
+        EditText txt_username;
+        EditText txt_password ;
+
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+
+            // Set our view from the "main" layout resource
+            SetContentView (Resource.Layout.Main);
+
+             btn_login = FindViewById<Button>(Resource.Id.btn_login);
+             btn_register = FindViewById<Button>(Resource.Id.btn_register);
+
+             txt_username = FindViewById<EditText>(Resource.Id.login_username);
+             txt_password = FindViewById<EditText>(Resource.Id.login_password);
+
+            btn_login.Click += Btn_login_Click;
+            btn_register.Click += Btn_register_Click;
+        }
+
+        private void Btn_register_Click(object sender, System.EventArgs e)
+        {
+            StartActivity(typeof(RegisterActivity));
+        }
+
+        private void Btn_login_Click(object sender, System.EventArgs e)
+        {
+            bool result1, result2;
+            client.checkIsUserExists(txt_username.Text, txt_password.Text,out result1,out result2);
+            Toast toast;
+            if (result1)
+            {
+                toast = Toast.MakeText(this, "congratulation !!   !!", ToastLength.Short);
+                StartActivity(typeof(homeactivity));
+            }
+
+            else
+                toast = Toast.MakeText(this, "failed !!   !!", ToastLength.Short);
+            toast.Show();
+        }
+
+        
+
+    }
+}
+
+//------------------------RegisterActivity.cs---------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+
+namespace Day18
+{
+    [Activity(Label = "RegisterActivity")]
+    public class RegisterActivity : Activity
+    {
+        Button btn_register;
+        EditText txt_username,txt_password,txt_email,txt_address;
+
+        myservice.Service1 client = new myservice.Service1();
+
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+
+            SetContentView(Resource.Layout.Register);
+
+            txt_email = FindViewById<EditText>(Resource.Id.register_email);
+            txt_address = FindViewById<EditText>(Resource.Id.register_address);
+            txt_username = FindViewById<EditText>(Resource.Id.register_username);
+            txt_password = FindViewById<EditText>(Resource.Id.register_password);
+
+            btn_register = FindViewById<Button>(Resource.Id.btn_register_ok);
+
+            btn_register.Click += Btn_register_Click;
+        }
+
+        private void Btn_register_Click(object sender, EventArgs e)
+        {
+            Toast toast; 
+            try
+            {
+                client.AddUser(txt_username.Text, txt_password.Text, txt_address.Text, txt_email.Text);
+                toast = Toast.MakeText(this, "Congratulation !!   !!", ToastLength.Short);
+                StartActivity(typeof(homeactivity));
+            }
+            catch
+            {
+                toast = Toast.MakeText(this, "failed !!   !!", ToastLength.Short);
+            }
+            toast.Show();
+        }
+    }
+}
+
+
+
+//-----------------------------------------------homeActivity.cs---------------------------
+
+    [Activity(Label = "homeactivity")]
+    public class homeactivity : Activity
+    {
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+
+            SetContentView(Resource.Layout.home);
+        }
+    }
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+//------------------------demo one ---------------------------------------------
+
+namespace App13
+{
+    [Activity(Label = "App13", MainLauncher = true, Icon = "@drawable/icon")]
+    public class MainActivity : Activity
+    {
+        int count = 0;
+        TextView txtview;
+        Button btn_dec;
+        Button btn_inc;
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);       
+             SetContentView (Resource.Layout.Main);
+             btn_inc = FindViewById<Button>(Resource.Id.btn_inc);
+             btn_dec = FindViewById<Button>(Resource.Id.btn_dec);
+             txtview = FindViewById<TextView>(Resource.Id.txtview);
+            btn_inc.Click += Btn_inc_Click;
+            btn_dec.Click += Btn_dec_Click;
+
+        }
+
+        private void Btn_dec_Click(object sender, System.EventArgs e)
+        {
+            count++;
+            txtview.Text = count.ToString();
+        }
+
+        private void Btn_inc_Click(object sender, System.EventArgs e)
+        {
+            count--;
+            txtview.Text = count.ToString();
+        }
+    }
+}
+//----------------------------------------View-----------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:x="http://schemas.android.com/apk/res/android"
+    x:orientation="vertical"
+    x:layout_width="match_parent"
+    x:layout_height="match_parent">
+  <TextView
+     x:layout_width="match_parent"
+     x:layout_height="wrap_content"
+     x:text="0"
+     x:id="@+id/txtview" />
+  <Button
+        x:layout_width="match_parent"
+        x:layout_height="wrap_content"
+        x:text="Inc"
+        x:id="@+id/btn_inc" />
+   
+    <Button
+        x:layout_width="match_parent"
+        x:layout_height="wrap_content"
+        x:text="dec"
+        x:id="@+id/btn_dec" />
+</LinearLayout>
+
+
+//-----------------------------------------------------------------

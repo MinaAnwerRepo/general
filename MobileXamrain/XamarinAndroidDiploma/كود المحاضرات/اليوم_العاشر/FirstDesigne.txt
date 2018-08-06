@@ -1,0 +1,57 @@
+1- Study the Very Basics Fundamentals of XML 
+https://www.w3schools.com/xml/
+
+2-
+-- try this Designes : 
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:x="http://schemas.android.com/apk/res/android"
+    x:orientation="vertical"
+    x:layout_width="match_parent"
+    x:layout_height="match_parent">
+    <Button
+        x:layout_width="match_parent"
+        x:layout_height="wrap_content"
+        x:text="Click Here !!"
+        x:id="@+id/btn_one" />
+    <TextClock
+        x:layout_width="match_parent"
+        x:layout_height="wrap_content"
+        x:text="Hello world"
+        x:id="@+id/data" />
+    <AnalogClock
+        x:layout_width="match_parent"
+        x:layout_height="wrap_content"
+        x:id="@+id/MyWatch" />
+    <DigitalClock
+        x:layout_width="match_parent"
+        x:layout_height="wrap_content"
+        x:text="Watch"
+        x:id="@+id/MyDigiWatch" />
+    <SeekBar
+        x:layout_width="match_parent"
+        x:layout_height="wrap_content"
+        x:id="@+id/MyDdatch" />
+    <Switch
+        x:layout_width="match_parent"
+        x:layout_height="wrap_content" />
+	<RatingBar
+        x:layout_width="match_parent"
+        x:layout_height="wrap_content"
+        x:id="@+id/Rater"/>	
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

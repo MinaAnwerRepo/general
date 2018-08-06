@@ -1,0 +1,41 @@
+static void Main(string[] args)
+        {
+            string [] employeeNames = new string [3];
+            int[] employeeId = new int [3];
+            string [] employeeAdd = new string [3];
+            Console.WriteLine("welcom in my app ");
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine(">>  For Employee " + i + "   ");
+                Console.Write("Enter Employee Name :");
+                employeeNames[i] = Console.ReadLine();
+
+                Console.Write("Enter Employee Id :");
+                employeeId[i] =int.Parse( Console.ReadLine());
+
+                Console.Write("Enter Employee Add :");
+                employeeAdd[i] = Console.ReadLine();
+            }
+            Console.WriteLine(">>  Enter Employee Id to search for  ");
+            string choice = Console.ReadLine();
+            while(choice!="0")
+            {
+                int index = Array.IndexOf(employeeId,int.Parse( choice));
+
+                if(index==-1)
+                {
+                    Console.WriteLine("employe with id "+ choice +"not Exists ..");
+                }
+                else
+                {
+                    Console.WriteLine("Employee id " + employeeId[index]);
+                    Console.WriteLine("Employee name " + employeeNames[index]);
+                    Console.WriteLine("Employee address " + employeeAdd[index]);
+                }
+                Console.WriteLine(">>  Enter Employee Id to search for  ");
+                choice = Console.ReadLine();
+            }
+
+            Console.WriteLine("thanks you for using app !!");
+            Console.ReadKey();
+        }

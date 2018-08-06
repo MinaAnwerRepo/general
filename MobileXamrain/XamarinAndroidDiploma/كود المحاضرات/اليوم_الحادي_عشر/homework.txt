@@ -1,0 +1,5 @@
+kindly add the following Featuers to our app : 
++ add buttom called Reset to make count = 0 
++ prevent app to count with minues ( count should not be less than zero ) .
++ improve designe and add some colors to buttons and text box .
++ show current date and time in the top of application . 

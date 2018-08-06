@@ -1,0 +1,93 @@
+
+        static void Main(string[] args)
+        {
+            Bird mybird = new Bird();
+            mybird.Country = "Egypt";
+            mybird.Name = "BetterFly";
+            mybird.NoOflegs = 6;
+            //-------------------create object -----------------------------------
+            Camel mycamel = new Camel(54);
+            Console.WriteLine(mycamel.GetId());           
+            //--------------------create object with object intializer------------------------------
+            Camel newone = new Camel(23) { BirthPlace="mozambek" , color="black" , Country ="Egypt" };
+            //-------------------Create object using function create---------------------------------
+            monkey mymonkey = monkey.Create();
+        }
+//----------------------------------------------------------------------------------------------------
+
+ class Camel 
+    {
+        private int Id;
+        public string Name;
+        public string BirthPlace;
+        public string Country;
+        public int NoOflegs;
+        public string Volum;
+        public string color;
+        public bool ismale;
+        string Hump;
+        DateTime DateOfCreation;       
+        public Camel (int _id)
+        {
+            this.DateOfCreation = DateTime.Now;
+        }
+        public int GetId ()
+        {
+            return this.Id;
+        }
+    }
+	
+	
+	
+	   class Bird
+    {
+        private int Id;
+        public string Name;
+        public string BirthPlace;
+        public string Country;
+        public int NoOflegs;
+        public string Volum;
+        public string color;
+        public bool ismale;
+       
+    }
+	
+	 class monkey
+    {
+        private int Id;
+        public string Name;
+        public string BirthPlace;
+        public string Country;
+        public int NoOflegs;
+        public string Volum;
+        public string color;
+        public bool ismale;
+        public bool teeth;
+        private monkey ()
+        {   }
+        public static monkey Create()
+        {
+            monkey newmonkey = new monkey();
+            newmonkey.Id = 0;
+            newmonkey.teeth = true;
+            return newmonkey;
+        }
+
+    }
+	
+	
+	  class Cat
+    {
+        private int Id;
+        public string Name;
+        public string BirthPlace;
+        public string Country;
+        public int NoOflegs;
+        public string Volum;
+        public string color;
+        public bool ismale;
+        public bool tail;
+        DateTime DateOfCreation;
+    }
+	
+	

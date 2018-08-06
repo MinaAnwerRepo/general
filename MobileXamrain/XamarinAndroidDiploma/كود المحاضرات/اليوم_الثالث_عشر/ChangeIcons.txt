@@ -1,0 +1,17 @@
+you can Change your application Icon with Two ways :
+
++ first : add any Imag.Png in Drawable Folder 
+
++ Image name should start with Letters and have no space or special Characters 
+
++ from the solution explorer 
+  select project name and Right Click To Proberties 
+  from AndroidManifest tab 
+  go to Application Icon and select your Image   
+  
+  
++ from  MainActivity 
+
+  [Activity(Label = "Test_No_Use_3", MainLauncher = true,Icon= "@drawable/Img1")]
+
+  change the Value in Icon probertey  

@@ -1,0 +1,34 @@
+//--------------------------this is the interface-------------
+    [ServiceContract]
+    public interface IService1
+    {
+        [OperationContract]
+        void AddUser(string username, string password, string address, string email);
+
+        [OperationContract]
+        bool checkIsUserExists(string username , string password);
+    }
+	
+//----------------------------this is service class ----------------------------
+
+   public class Service1 : IService1
+    {
+        LoginFullSystemEntities dbx = new LoginFullSystemEntities(); 
+        public void AddUser(string username, string password, string address, string email)
+        {
+            var newuser = new User() { Name = username, Address = address, Email = email, Password = password };
+            dbx.Users.Add(newuser);
+            dbx.SaveChanges(); 
+        }
+
+        public bool checkIsUserExists(string username , string password)
+        {
+            var query = (from d in dbx.Users
+                         where d.Name == username && d.Password == password
+                         select d).FirstOrDefault();
+            return query == null ? false : true; 
+        }
+
+
+   
+    }

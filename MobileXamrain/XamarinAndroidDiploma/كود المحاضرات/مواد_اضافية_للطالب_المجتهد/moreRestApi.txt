@@ -1,0 +1,16 @@
+
+
+2- find books with isbn : 
+  https://www.booknomads.com/api/v0/isbn/9789000035526
+
+
+
+
+
+
+
+3- api to get Bit-coin  daily change  : 
+
+   https://api.coindesk.com/v1/bpi/currentprice.json
+   
+4- 

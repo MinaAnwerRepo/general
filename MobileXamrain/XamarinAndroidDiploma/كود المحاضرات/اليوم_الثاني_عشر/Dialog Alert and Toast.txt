@@ -1,0 +1,222 @@
+
+//---------------------   1-  Alert Dialog  : ----------------------------------------------------
+=>full Demo for three types of alert in android 
++ add this instead of main.axml
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:text="Dialog_One"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_one" />
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/btn_two"
+        android:text="Dialog_Two" />
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="Dialog_Two"
+        android:id="@+id/btn_three" />
+</LinearLayout>
+
+
+
++ add this in main activity code behind  :
+namespace App1
+{
+    [Activity(Label = "App1", MainLauncher = true, Icon = "@drawable/icon")]
+    public class MainActivity : Activity
+    {
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+             SetContentView (Resource.Layout.Main);
+            Button button1 = FindViewById<Button>(Resource.Id.btn_one);
+            Button button2 = FindViewById<Button>(Resource.Id.btn_two);
+            Button button3 = FindViewById<Button>(Resource.Id.btn_three);
+            button1.Click += Button1_Click;
+            button2.Click += Button2_Click;
+            button3.Click += Button3_Click;
+        }
+        private void Button1_Click(object sender, System.EventArgs e)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog alertdialog = builder.Create();
+            alertdialog.SetTitle("this is sample !!");
+            alertdialog.SetMessage("are you donkey ??");
+            alertdialog.SetIcon(Android.Resource.Drawable.IcDialogAlert);
+            alertdialog.SetButton("Ok!", btn1_ok_clicked);
+
+            alertdialog.Show();
+        }
+        private void Button2_Click(object sender, System.EventArgs e)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog alertdialog = builder.Create();
+            alertdialog.SetTitle("btn2 pressed !!");
+            alertdialog.SetMessage("are you donkey user !!!");
+            alertdialog.SetIcon(Android.Resource.Drawable.AlertLightFrame);
+            alertdialog.SetButton("OK!!", Btn2_ok_Clicked);
+            alertdialog.SetButton2("NO", btn2_NO_clicked);
+            alertdialog.Show();
+
+        }
+        private void Button3_Click(object sender, System.EventArgs e)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog alertdialog = builder.Create();
+            alertdialog.SetTitle("btn2 pressed !!");
+            alertdialog.SetMessage("are you donkey user !!!");
+            alertdialog.SetIcon(Android.Resource.Drawable.AlertLightFrame);
+            alertdialog.SetButton("OK!!", Btn3_ok_Clicked);
+            alertdialog.SetButton2("NO", btn3_NO_clicked);
+            alertdialog.SetButton3("Cancel", btn3_Cancel_Clicked);
+            alertdialog.Show();
+
+        }
+
+        private void btn3_NO_clicked(object sender, DialogClickEventArgs e)
+        {
+          
+        }
+        private void Btn3_ok_Clicked(object sender, DialogClickEventArgs e)
+        {
+           
+        }
+        private void btn3_Cancel_Clicked(object sender, DialogClickEventArgs e)
+        {
+           
+        }     
+        private void Btn2_ok_Clicked(object sender, DialogClickEventArgs e)
+        {
+           // do nothing 
+        }    
+        private void btn2_NO_clicked(object sender, DialogClickEventArgs e)
+        {
+           // do nothing !!
+        }
+        private void btn1_ok_clicked(object sender, System.EventArgs e)
+        {
+            // do nothing 
+        }
+
+
+    }
+}
+
+//--------------------------------------2- Toast----------------------------------------------
+
++ add this in Axml file  : 
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:text="Toast_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_one" />
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/btn_two"
+        android:text="Toast_Two" />
+</LinearLayout>
+
+
+
++ in main activity add : 
+
+    [Activity(Label = "App2", MainLauncher = true, Icon = "@drawable/icon")]
+    public class MainActivity : Activity
+    {
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+             SetContentView (Resource.Layout.Main);
+            Button button1 = FindViewById<Button>(Resource.Id.btn_one);
+            Button button2 = FindViewById<Button>(Resource.Id.btn_two);
+            button1.Click += Button1_Click;
+            button2.Click += Button2_Click;
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            var toast = Toast.MakeText(this, "انا خلصت بسرعة  !!", ToastLength.Short);
+            toast.Show();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            var toast = Toast.MakeText(this, "انا خلصت !!", ToastLength.Long);
+            toast.Show();
+
+            var toast2 = Toast.MakeText(this, "بس علي مهلي  !!",(ToastLength)1);
+            toast2.Show();
+        }
+    }
+
+
+//-----------------------------------  3- Alert  --------------------------------------------------------
+
++ add componant Alert From Componant Center 
+
++ search for Alert 
+
++ add Alert Componant , open it 
+
++ add this designe to prev app : 
+
+<Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Alert"
+        android:id="@+id/btn_Alert" />
+		
++ add this code  : 
+
+Button button3 = FindViewById<Button>(Resource.Id.btn_Alert);
+	
+button3.Click += button3_click;
+
+
+ private void button3_click(object sender, EventArgs e)
+{         
+  AlertCenter.Default.Init(Application);
+  AlertCenter.Default.PostMessage("Knock knock!", "Who's there?", Resource.Drawable.Icon);
+  AlertCenter.Default.PostMessage("Interrupting cow.", "Interrupting cow who?",
+                                        Resource.Drawable.Icon, () => {
+                                            Console.WriteLine("Moo!");});
+}
+
+
++ finally you need Permission to :  
+	 
+	 <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

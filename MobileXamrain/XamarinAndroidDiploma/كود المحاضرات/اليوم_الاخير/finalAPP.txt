@@ -1,0 +1,294 @@
+
+do not forget add internet access permission to your app ...
+//-----------------------main.axml-------------------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+    <ImageView
+        android:src="@drawable/img2"
+        android:layout_width="match_parent"
+        android:layout_height="141.0dp"
+        android:id="@+id/imageView1" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="29.5dp"
+        android:id="@+id/linearLayout4" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout3"
+        android:gravity="center"
+        android:textAlignment="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/txt_EGP"
+            android:text="Price is :  236711.897 EGP"
+            android:textSize="50px"
+            android:textAllCaps="false" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/txt_usd"
+            android:text="            13.322.982  $"
+            android:textSize="50px" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/txt_Euro"
+            android:text="            11,852.025  €"
+            android:textSize="50px" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="24.0dp"
+            android:id="@+id/linearLayout6" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="44.0dp"
+        android:id="@+id/linearLayout4"
+        android:paddingLeft="15px"
+        android:paddingRight="15px">
+        <TextView
+            android:text="Enable daily notification          "
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="249.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView1"
+            android:paddingLeft="25px"
+            android:paddingTop="20px"
+            android:textColorLink="@android:color/holo_orange_light" />
+        <Switch
+            android:layout_width="79.0dp"
+            android:layout_height="44.0dp"
+            android:id="@+id/switch1"
+            android:checked="true" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="44.0dp"
+        android:id="@+id/linearLayout4"
+        android:paddingLeft="15px"
+        android:paddingRight="15px">
+        <TextView
+            android:text="Enable onchange notification    "
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="250.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/textView1"
+            android:paddingLeft="25px"
+            android:paddingTop="20px"
+            android:textColorLink="@android:color/holo_orange_light" />
+        <Switch
+            android:layout_width="79.0dp"
+            android:layout_height="44.0dp"
+            android:id="@+id/switch1"
+            android:checked="true" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/linearLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="28.0dp" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="43.5dp"
+        android:id="@+id/linearLayout1"
+        android:layout_marginBottom="6.5dp"
+        android:gravity="center">
+        <Button
+            android:text="Update"
+            android:layout_width="132.5dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btn_update"
+            android:background="@drawable/bluebutton"
+            android:textAllCaps="false" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="27.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/linearLayout5" />
+        <Button
+            android:text="more details..."
+            android:layout_width="131.0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btn_about"
+            android:background="@drawable/bluebutton"
+            android:textAllCaps="false" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="92.5dp"
+        android:id="@+id/txt_lastupdate"
+        android:fontFamily="@android:string/VideoView_error_text_invalid_progressive_playback"
+        android:shadowDx="10"
+        android:shadowDy="10"
+        android:singleLine="false"
+        android:soundEffectsEnabled="true"
+        android:paddingEnd="15px"
+        android:paddingLeft="25px"
+        android:paddingRight="15px"
+        android:paddingTop="30px"
+        android:textSize="30px"
+        android:textStyle="normal"
+        android:shadowColor="#ffb4b4b4"
+        android:textAllCaps="false"
+        android:textColorLink="@android:color/holo_orange_dark" />
+</LinearLayout>
+
+//-------------------------------------------MainActivity----------------------------
+using Android.App;
+using Android.Widget;
+using Android.OS;
+using System.Threading.Tasks;
+using System.Json;
+using System.Net;
+using System;
+using System.IO;
+
+namespace BitCoin
+{
+    [Activity(Label = "BitCoin", MainLauncher = true, Icon = "@drawable/icon")]
+    public class MainActivity : Activity
+    {
+        Button btn_update, btn_about;
+        TextView txt_Euro, txt_USD, txt_EGP, txt_lastupdate;
+        string EuroRate, USDRate, lastTimeUpdate;
+        double EGPRate;
+        JsonValue json;
+
+        string url; 
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+            SetContentView (Resource.Layout.Main);
+            GetViewDTO();
+            btn_update.Click += Btn_update_Click;
+            btn_about.Click+=(sender,e)=>
+             {
+                 StartActivity(typeof(AboutActivity));
+             };
+        }
+
+        private async void Btn_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                url = "http://api.coindesk.com/v1/bpi/currentprice.json";
+                 json = await FetchAPIAsync(url);
+                 EuroRate = json["bpi"]["EUR"]["rate"];
+                 USDRate = json["bpi"]["USD"]["rate"];
+                 EGPRate = double.Parse( USDRate) * 17.71;
+                lastTimeUpdate = json["time"]["updated"]; 
+                updateTxtFields();
+
+                var toast = Toast.MakeText(this, "Bit Coin Updated Successfully", ToastLength.Long);
+                toast.Show();
+            }
+            catch
+            {
+                var toast = Toast.MakeText(this, "internet connection Problem ...  !!", ToastLength.Long);
+                toast.Show();
+            }
+        }
+
+        private void updateTxtFields()
+        {
+            txt_EGP.Text = "Price is :  "+ EGPRate.ToString().Substring(0,10)+" EGP";
+            txt_USD.Text = "            " + USDRate.Substring(0,10)+ "   $";
+            txt_Euro.Text= "            " +EuroRate.Substring(0,10) +"  €";
+
+            txt_lastupdate.Text = "last updated price in  " + lastTimeUpdate.Replace("UTC","") +
+                                  "\n  all copy rights reserved mina_anwer05@gmail.com";
+
+        }
+
+        private void GetViewDTO()
+        {
+            btn_update = FindViewById<Button>(Resource.Id.btn_update);
+            btn_about = FindViewById<Button>(Resource.Id.btn_about);
+            txt_EGP = FindViewById<TextView>(Resource.Id.txt_EGP);
+            txt_Euro = FindViewById<TextView>(Resource.Id.txt_Euro);
+            txt_USD = FindViewById<TextView>(Resource.Id.txt_usd);
+            txt_lastupdate = FindViewById<TextView>(Resource.Id.txt_lastupdate);
+        }
+
+        private async Task<JsonValue> FetchAPIAsync(string url)
+        {
+            // Create an HTTP web request using the URL:
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(new Uri(url));
+            request.ContentType = "application/json";
+            request.Method = "GET";
+
+            // Send the request to the server and wait for the response:
+            using (WebResponse response = await request.GetResponseAsync())
+            {
+                // Get a stream representation of the HTTP web response:
+                using (Stream stream = response.GetResponseStream())
+                {
+                    // Use this stream to build a JSON document object:
+                    JsonValue jsonDoc = await Task.Run(() => JsonObject.Load(stream));
+                    Console.Out.WriteLine("Response: {0}", jsonDoc.ToString());
+
+                    // Return the JSON document:
+                    return jsonDoc;
+                }
+            }
+        }
+
+    }
+}
+
+//----------------------------about.axml-----------------------------------------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <TextView
+        android:text="..........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................."
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="609.0dp"
+        android:id="@+id/textView1" />
+</LinearLayout>
+//------------------------aboutActivity.cs-----------------------------------------------------------------
+namespace BitCoin
+{
+    [Activity(Label = "AboutActivity")]
+    public class AboutActivity : Activity
+    {
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+
+            SetContentView(Resource.Layout.about);
+        }
+    }
+}
+//----------------------------------------------------------------------------------------

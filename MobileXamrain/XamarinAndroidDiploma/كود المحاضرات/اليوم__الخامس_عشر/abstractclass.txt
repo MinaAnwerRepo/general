@@ -1,0 +1,100 @@
+namespace ConsoleApp2
+{
+    class AndyNormalCal : APICalBase
+    {
+        public override void ExecuteData()
+        {
+           //
+           //
+           //
+        }
+
+        public override void GetData()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void ProcessData()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void ReturnResult()
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
+
+
+
+namespace ConsoleApp2
+{
+    class HendOverCal : APICalBase
+    {
+        public override void ExecuteData()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void GetData()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void ProcessData()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void ReturnResult()
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
+
+
+
+namespace ConsoleApp2
+{
+    abstract  class APICalBase
+    {
+        public  abstract void GetData();
+        public abstract void ProcessData();
+        public abstract void ExecuteData();
+        public abstract void ReturnResult();
+    }
+}
+
+
+namespace ConsoleApp2
+{
+    class AndyNormalCal : APICalBase
+    {
+        public override void ExecuteData()
+        {
+           //
+           //
+           //
+        }
+
+        public override void GetData()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void ProcessData()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void ReturnResult()
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
+
+
+

@@ -1,0 +1,86 @@
+----------------while loop ----------------------------
+
+            Console.WriteLine("do you need *    ? :");          
+            string userchoice = Console.ReadLine();          
+            while(userchoice=="y")
+            {
+                Console.WriteLine("*");
+                Console.WriteLine("do you need * ?" );
+                userchoice = Console.ReadLine();
+
+            }
+            Console.WriteLine("I will exit now !!!");
+
+
+------------------------------do while--------------------------------
+     
+            string userchoice;
+            do
+            {
+                Console.WriteLine("*");
+                Console.WriteLine("do you need * ?");
+                userchoice = Console.ReadLine();
+            }
+            while (userchoice == "y");          
+            Console.WriteLine("I will exit now !!!");
+            Console.ReadLine();
+        
+
+
+------------------------ trinary operator -----------------------------
+            string password = "1234";
+            bool cond = (password == "1234") ? true : false;
+			
+			
+            int counter = 5;
+            int myvar = (counter > 5) ? 100 : 0; 
+-------------------------------Break statment ------------------------
+int count ;
+while(true)
+{
+   Console.WriteLine("*");
+   count ++ ;
+   if(count>20)
+   {
+    Break ;
+   }
+}
+
+
+-------------------endless loop ------------------------------------
+
+            for (;  ; )
+            {
+                Console.WriteLine("*");
+            }
+
+            while(true)
+            {
+                Console.WriteLine("*");
+            }
+
+            do
+            {
+                Console.WriteLine("*");
+            } while (true);
+
+
+
+------------تخزين البيانات في مصفوفة وقراءتها ----------------------------------
+
+
+            string[] employeeno = new string[3];
+			
+            for (int i = 0; i < employeeno.Length; i++)
+            {
+                Console.WriteLine("Enter emoloyee number : "+i);
+                employeeno[i] = Console.ReadLine();
+            }
+			
+
+            for (int i = 0; i < employeeno.Length; i++)
+            {
+                Console.WriteLine(" emoloyee  no: "+i+ employeeno[i]);               
+            }
+
+-----------------------------------------------------------------------------------

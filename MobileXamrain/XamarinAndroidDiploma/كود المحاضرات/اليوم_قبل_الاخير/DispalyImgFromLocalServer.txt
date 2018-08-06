@@ -1,0 +1,85 @@
+ 
+ + go to IIS and Add Application Like Images 
+ put some Images there and try to Browse them 
+ get URL 
+ some thing like : http://localhost/Images/4.jpg
+                 : http://192.168.100.241/Images/4.jpg
+ it should work with both of them 
+ no extra configration needed 
+ 
+ + add this code in main activity : 
+ 
+ 
+ [Activity(Label = "TestImaged", MainLauncher = true, Icon = "@drawable/icon")]
+    public class MainActivity : Activity
+    {
+        int count = 0;
+        ImageView myimg;
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+            SetContentView (Resource.Layout.Main);          
+             myimg = FindViewById<ImageView>(Resource.Id.imageView1);
+            var imageBitmap = GetImageBitmapFromUrl("http://192.168.100.241/Images/"+count.ToString()+".jpg");
+            myimg.SetImageBitmap(imageBitmap);
+            Button btn = FindViewById<Button>(Resource.Id.btn);
+            btn.Click += Btn_Click;
+        }
+
+        private void Btn_Click(object sender, System.EventArgs e)
+        {
+            count++;
+            if (count > 5) count = 0;
+            var imageBitmap = GetImageBitmapFromUrl("http://192.168.100.241/Images/" + count.ToString() + ".jpg");
+
+            myimg.SetImageBitmap(imageBitmap);
+        }
+
+        private Bitmap GetImageBitmapFromUrl(string url)
+        {
+            Bitmap imageBitmap = null;
+
+            using (var webClient = new WebClient())
+            {
+                var imageBytes = webClient.DownloadData(url);
+                if (imageBytes != null && imageBytes.Length > 0)
+                {
+                    imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
+                }
+            }
+
+            return imageBitmap;
+        }
+    }
+	
+	
++ add this designe in main layout 
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:x="http://schemas.android.com/apk/res/android"
+    x:orientation="vertical"
+    x:layout_width="match_parent"
+    x:layout_height="match_parent">
+    <Button
+        x:text="Press here "
+        x:layout_width="match_parent"
+        x:layout_height="wrap_content"
+        x:id="@+id/btn" />
+    <ImageView
+        x:src="@android:drawable/ic_menu_gallery"
+        x:layout_width="match_parent"
+        x:layout_height="wrap_content"
+        x:maxWidth="100px"
+        x:adjustViewBounds="true"
+        x:id="@+id/imageView1"  
+        x:scaleType="fitCenter"  />
+       
+</LinearLayout>
+
+
+	
+	
+	
+	
+	
+	

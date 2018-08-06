@@ -1,0 +1,95 @@
+//-----------------------------------------events--------------------------------------------------
++ multicast Delegate is adelegate that can holds many functions 
++ you can invoke all functions by using deleagateName.Invoke 
+  if the functions have return data it will be the last functions invoked
+
++ you can use operator  += to add more functions to delegate 
+
+
++ you also can use operator -= to remove any functions 
+
+
++ all functions related to this delegate can be seen in delegate invokation list . 
+
+
+//------------------------------------------------------------------------------------------------
+events steps : 
+1- الناشر يوفر الطريقة اللي المستخدم يسجل نفسه 
+2- المستخدم يسجل نفسه 
+3-   الحدث اللي مستنيه المستخدم يحصل 
+4- الناشر يروح يعمل  انفوك لكل الفانكشنز اللي موجودة جوه ال ديليجيت
+
+//----------------------------demo-----------------------------------------------------------------
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Publisher pub = new Publisher();
+            subscriber sub = new subscriber();
+            AnotherSub anotherSub = new AnotherSub();
+
+            pub.delnewinfo += sub.MsgArrived;
+            pub.delnewinfo += anotherSub.MsgArrived;
+
+            pub.Add("mina have come again !!");
+
+            Console.ReadLine(); 
+
+        }
+    }
+	
+ class subscriber
+    {
+        public void MsgArrived ()
+        {
+            Console.WriteLine("new Message arrived In sub one ");
+        }
+    }
+	
+  class AnotherSub
+    {
+        public void MsgArrived()
+        {
+            Console.WriteLine("new Message arrived In sub Two ");
+        }
+    }
+	
+	
+  public delegate  void mydel ();  
+    class Publisher
+    {
+        public mydel delnewinfo;
+        List<string> News = new List<string>(); 
+
+        public void Add ( string info)
+        {
+            News.Add(info);
+            delnewinfo.Invoke();
+        }
+    }
+
+	
+//-----------------------------------------------------------------------------------
++ the propblem that any one can invoke delegate from main
+  or make it equals Null 
+
+   pub.delnewinfo.Invoke();
+   pub.delnewinfo = null ;
+  
+  
+ + just add keyword event to delegate definition  
+ public event mydel delnewinfo;  
+
+ //  pub.delnewinfo.Invoke();   compile error 
+ // pub.delnewinfo = null ;      compile error
+
++ finally you need to check if event equals to null before invoke your invokation list
+
+
+
+
+
+
+
+
+

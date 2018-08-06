@@ -1,0 +1,89 @@
+----------------------Timer------------------------
+1- add this front end code  main.axml
+2- add backend code activity.cs 
+3- important note :
+take care of RunOnUiThread function as it uses in running back end code in front end 
+interface thread 
+
+-------------------------main.xml----------------------------
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:x="http://schemas.android.com/apk/res/android"
+    x:orientation="vertical"
+    x:layout_width="match_parent"
+    x:layout_height="match_parent">
+    <TextView
+        x:layout_width="match_parent"
+        x:layout_height="wrap_content"
+        x:text="0"
+        x:id="@+id/txt1" />
+    <LinearLayout
+        x:orientation="horizontal"
+        x:layout_width="match_parent"
+        x:layout_height="wrap_content"
+        x:gravity="center">
+        <Button
+            x:layout_width="wrap_content"
+            x:layout_height="wrap_content"
+            x:text="start"
+            x:id="@+id/btn1" />
+        <Button
+            x:layout_width="wrap_content"
+            x:layout_height="wrap_content"
+            x:text="stop"
+            x:id="@+id/btn2" />
+    </LinearLayout>
+</LinearLayout>
+//--------------------------Activity.cs------------------------
+using Android.App;
+using Android.Widget;
+using Android.OS;
+using Android.Content;
+using System.Timers;
+
+namespace test_no_need_6
+{
+    [Activity(Label = "test_no_need_6", MainLauncher = true, Icon = "@drawable/icon")]
+    public class MainActivity : Activity
+    {
+        Timer t;
+        Button btn1,btn2;  
+        TextView txtview1;
+        int counter=0;
+        public MainActivity()
+        {
+            t = new Timer();          
+        }
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+
+             SetContentView (Resource.Layout.Main);
+            t.Elapsed += T_Elapsed;
+            t.Interval = 100;
+            btn1 = FindViewById<Button>(Resource.Id.btn1);
+            btn1.Click += delegate
+            { t.Start(); };
+            btn2 = FindViewById<Button>(Resource.Id.btn2);
+            btn2.Click += delegate
+            { t.Stop(); };
+            txtview1 = FindViewById<TextView>(Resource.Id.txt1);
+        }
+
+        private void T_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            RunOnUiThread(() => {
+                counter++;
+                txtview1.Text = counter.ToString();
+            });
+        }
+    }
+}
+
+
+
+
+
+
+
+
+

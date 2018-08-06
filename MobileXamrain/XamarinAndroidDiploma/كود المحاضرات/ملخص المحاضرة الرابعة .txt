@@ -1,0 +1,92 @@
+  
+//------------------------------------------------------------------------------------------------------
+  class Program
+    {
+        static void Main(string[] args)
+        {
+            sayHello();
+            sayHello();
+            Console.ReadLine();
+
+        }
+
+        private static void sayHello()
+        {
+            Console.WriteLine("Welcom in my app >>>>");
+            Console.WriteLine("Welcom in my app >>>>");
+            Console.WriteLine("Welcom in my app >>>>");
+            Console.WriteLine("Welcom in my app >>>>");
+        }
+    }
+//-------------------------------------------------ref and out ------------------------------------
+  class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = 3;
+            int b = 4;
+            Console.WriteLine("a : " + a);
+            Console.WriteLine("b : " + b);
+            Swap(ref a,ref b);
+            Console.WriteLine("a : "+a);
+            Console.WriteLine("b : "+b);
+            
+
+            int c;
+            AddFive(out c);
+            Console.WriteLine("C is "+ c);
+
+            Console.ReadLine();
+        }
+
+        private static void Swap(ref int a,ref int b)
+        {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+
+        private static void AddFive (out int c)
+        {
+             c = 5;
+        }
+
+    }
+	
+	
+-----------------------------------------------function Overloading -----------------------------
+  class Program
+    {
+        static void Main(string[] args)
+        {
+            int x1 = 0;
+            int x2 = 1;
+            int x3 = 4;
+            int x4 = 45;
+          int result2 =  sum(x1, x2);
+          int result3 =  sum(x1, x2, x3);
+          int result4 =   sum(x1, x2, x3, x4);
+            Console.WriteLine("first Result is : "+result2);
+            Console.WriteLine("second Result is : " + result3);
+            Console.WriteLine("third Result is : " + result3);
+            Console.ReadLine();
+
+        }
+
+        private static int sum(int x1, int x2, int x3, int x4)
+        {
+            return x1 + x2 + x3 + x4;
+        }
+
+        private static int sum(int x1, int x2, int x3)
+        {
+            return x1 + x2 + x3;
+        }
+
+        private static int sum(int x1, int x2)
+        {
+            return x1 + x2;
+        }
+    }	
+	
+//---------------------------------------------------------------------------------

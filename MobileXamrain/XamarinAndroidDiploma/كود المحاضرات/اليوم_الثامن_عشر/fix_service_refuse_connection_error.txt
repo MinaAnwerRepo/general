@@ -1,0 +1,17 @@
+
+1- check show hidden files option  in your computer
+
+2- go to this path :
+          yourapplication / .vs /config / applicationhost.config
+
+		  add this line in 
+		                <bindings >        </bindings>
+		  tag ....
+3- save file , reRun your service , update service reference in you xamarin project 
+4- update service url to be : your machine ip : 44014
+5- press enter and then try ..
+   it will work ...
+
+   
+
+<binding protocol="http" bindingInformation="*:44014:*" />

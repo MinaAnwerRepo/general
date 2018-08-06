@@ -1,0 +1,26 @@
+          static void Main(string[] args)
+        {
+
+            Console.WriteLine("Enter your name : ");
+            string username = Console.ReadLine();
+            Console.WriteLine("Enter your password : ");
+            string password = Console.ReadLine();
+            if(username=="mina"&& password=="1234")
+            {
+                Console.WriteLine("welcom mr / "+ username);
+                int count = password.Count();
+                Console.Write("password : ");
+                for (int i = 0; i < count; i++)
+                {
+                    Console.Write("*");
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("You are not mina !! go out !");
+            }
+
+            Console.ReadKey();
+
+        }

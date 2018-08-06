@@ -1,0 +1,38 @@
+    LogInSystemEntities context = new LogInSystemEntities();
+
+        public string Refresh ()
+        {
+            return "ok";
+        }
+
+        public void AddUser(string name , string password , string email )
+        {
+            User userone = new User() { Name = name , Email= email , Password = password };
+            context.Users.Add(userone);
+            context.SaveChanges(); 
+
+        }
+
+        public void DeleteUser(int id)
+        {
+            User user = (from d in context.Users
+                         where d.Id == id
+                         select d).FirstOrDefault();
+            context.Users.Remove(user);
+            context.SaveChanges();
+
+        }
+
+        public void updateUser(string name, string password, string email , int id)
+        {
+            User user = (from d in context.Users
+                         where d.Id == id
+                         select d).FirstOrDefault();
+            user.Name = name;
+            user.Password = password;
+            user.Email = email;
+
+            context.SaveChanges();
+
+        }
+

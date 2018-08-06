@@ -1,0 +1,17 @@
+<Frame HorizontalOptions="Fill" 
+        VerticalOptions="Center"
+        HeightRequest="30"
+        Margin="30,15"
+        BackgroundColor="Blue"
+        CornerRadius="10">
+
+    <Frame.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding YourCommand}"/>
+    </Frame.GestureRecognizers>
+
+    <Label Text="Your Text" 
+            TextColor="White" 
+            FontSize="Large"
+            VerticalTextAlignment="Center"
+            HorizontalTextAlignment="Center"/>
+</Frame>

@@ -1,0 +1,72 @@
+//------------------------------------Implementing IEnumerable-----------------------------------
+ static void Main(string[] args)
+        {
+            Company Elzahra = new Company() { Name="Elzahara", Id=1 };
+            foreach (var item in Elzahra)
+            {
+                Employee emp = (Employee)item;
+                Console.WriteLine("Name : "+emp.Name);
+            }
+            Console.ReadLine();
+        }
+//-----------------------------------------------------------------------------------------------
+   public class Company :IEnumerable
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public List<Employee> Employees; 
+        public Company ()
+        {
+            Employees = new List<Employee>() {
+                new Employee(){ Id=1 , Name="mina", FamilyName="anwer" },
+                new Employee(){ Id=2 , Name="noha", FamilyName="ali" },
+                new Employee(){ Id=3 , Name="soha", FamilyName="anwer" },
+                new Employee(){ Id=4 , Name="monda", FamilyName="zaki" },
+                new Employee(){ Id=5 , Name="tota", FamilyName="saber" } };
+        }
+        public IEnumerator GetEnumerator()
+        {
+            return new iterator(this); 
+        }
+    }
+//---------------------------------------------------------------------------------------------------------
+ public  class Employee
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string FamilyName { get; set; }
+    }
+//---------------------------------------------------------------------------------------------------------
+  public class iterator : IEnumerator
+    {
+        Company obj;
+        int counter = -1;
+        public iterator (Company Ienum)
+        {
+          this.obj = Ienum;
+        }
+        public object Current
+        {
+          get
+            {
+              return   obj.Employees[counter];
+            }
+        }
+        public bool MoveNext()
+        {
+            if (counter <obj.Employees.Count-1)
+            {
+                counter++;
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public void Reset()
+        {
+           
+        }
+    }
+//---------------------------------------------------------------------------------------------------
